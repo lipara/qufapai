@@ -18,7 +18,7 @@ Vue.use(VueBus);
  *
  * 任意场景都能无阻碍访问
  */
-const accessRoutePath = ["/login", "/403", "/404", "/500", ];
+const accessRoutePath = ["/login", "/403", "/404", "/500",];
 router.beforeEach((to, from, next) => {
   // iView.LoadingBar.start();
   if (Auth.getToken()) {
