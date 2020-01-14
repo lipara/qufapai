@@ -1,0 +1,251 @@
+stages:
+  - build_jar
+  - build_image
+  - test
+  - deploy
+
+#---------------------------------------------------------
+#    任务之前脚本
+#---------------------------------------------------------
+before_script:
+  - "git clone ssh://git@192.168.1.136:8888/pubgrp/cicd.git"
+  -  "chmod -R +x ./*"
+  - "./cicd/common/v3/pre.sh"
+after_script:
+  - "./cicd/common/v3/post.sh"
+#---------------------------------------------------------
+#    开发或者测试环境下，develop分支，存在代码变化 maven构建gmc_app jar任务
+#---------------------------------------------------------
+buildjar:apollosun:dev:
+  stage: build_jar
+  tags:
+    - gitrunner-dev
+  script:
+    - " cnpm install && npm run build:dev && cd  docker && ./build_app_post.sh" #构建jar
+  artifacts:
+    paths:
+      - dist/*
+  only:
+    refs:
+      - develop
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_DEV/
+
+buildjar:apollosun:fat:
+  stage: build_jar
+  tags:
+    - gitrunner-fat
+  script:
+    - " cnpm install && npm run build:fat && cd  docker && ./build_app_post.sh" #构建jar
+  artifacts:
+    paths:
+      - dist/*
+  only:
+    refs:
+      - test
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_FAT/
+
+buildjar:apollosun:uat:
+  stage: build_jar
+  tags:
+    - gitrunner-fat
+  script:
+    - " cnpm install && npm run build:uat && cd  docker && ./build_app_post.sh" #构建jar
+  artifacts:
+    paths:
+      - dist/*
+  only:
+    refs:
+      - test
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_UAT/
+
+buildjar:apollosun:pro:
+  stage: build_jar
+  tags:
+    - gitrunner-dev
+  script:
+    - " cnpm install && npm run build && cd  docker && ./build_app_post.sh" #构建jar
+  artifacts:
+    paths:
+      - dist/*
+  only:
+    refs:
+      - master
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_PRO/
+
+buildjar:apollosun:pro-hk:
+  stage: build_jar
+  tags:
+    - gitrunner-dev
+  script:
+    - " cnpm install && npm run build:hk && cd  docker && ./build_app_post.sh" #构建jar
+  artifacts:
+    paths:
+      - dist/*
+  only:
+    refs:
+      - master
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_PRO_HK/
+
+#---------------------------------------------------------
+#    开发环境下，develop分支，存在代码变化,构建镜像,传送到私服。
+#---------------------------------------------------------
+buildimage:apollosun:dev:
+  stage: build_image
+  tags:
+    - gitrunner-dev
+  script:
+    - "cd docker && ./build_images.sh 192.168.1.138:5000 dev" #参数1 镜像hub地址，参数2 环境
+  only:
+    refs:
+      - develop
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_DEV/
+#---------------------------------------------------------
+#    测试环境下，develop分支，gmc-app存在代码变化,构建镜像,传送到私服。
+#---------------------------------------------------------
+buildimage:apollosun:fat:
+  stage: build_image
+  tags:
+    - gitrunner-fat
+  script:
+    - "cd  docker && ./build_images.sh 192.168.1.138:5000 fat" #
+  only:
+    refs:
+      - test
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_FAT/
+
+buildimage:apollosun:uat:
+  stage: build_image
+  tags:
+    - gitrunner-fat
+  script:
+    - "cd  docker && ./build_images.sh 192.168.1.138:5000 uat" #
+  only:
+    refs:
+      - test
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_UAT/
+
+buildimage:apollosun:pro:
+  stage: build_image
+  tags:
+    - gitrunner-dev
+  script:
+    - "cd  docker && ./build_images.sh registry.cn-hangzhou.aliyuncs.com/jiaozi pro" #
+  only:
+    refs:
+      - master
+    changes:
+      - src/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_PRO/
+buildimage:apollosun:pro-hk:
+  stage: build_image
+  tags:
+    - gitrunner-dev
+  script:
+    - "cd  docker && ./build_images.sh registry.cn-hangzhou.aliyuncs.com/jiaozi pro-hk" #
+  only:
+    refs:
+      - master
+    changes:
+      - src/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_PRO_HK$/
+#---------------------------------------------------------
+#    开发环境下，develop分支，gmc-app存在代码变化,发布到开发swarm集群。
+ # ./run_service.sh swarm集群remote地址 dockerhub地址
+#---------------------------------------------------------
+deploy:apollosun:dev:
+  stage: deploy
+  tags:
+    - gitrunner-dev
+  script:
+    - "cd  docker && ./run_service.sh 192.168.1.35:2375 192.168.1.138:5000 dev"
+  only:
+    refs:
+      - develop
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_DEV/
+#---------------------------------------------------------
+#    测试环境下，develop分支，gmc-app存在代码变化,发布到测试swarm集群。
+#---------------------------------------------------------
+deploy:apollosun:fat:
+  stage: deploy
+  tags:
+    - gitrunner-fat
+  script:
+    - "cd  docker && ./run_service.sh 192.168.1.116:2375 192.168.1.138:5000 fat"
+  only:
+    refs:
+      - test
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_FAT/
+
+deploy:apollosun:uat:
+  stage: deploy
+  tags:
+    - gitrunner-fat
+  script:
+    - "cd  docker && ./run_service.sh 192.168.1.168:2375 192.168.1.138:5000 uat"
+  only:
+    refs:
+      - test
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_UAT/
+
+deploy:apollosun:pro:
+  stage: deploy
+  tags:
+    - gitrunner-dev
+  script:
+    - "cd  docker && ./run_service_pro.sh -1 registry.cn-hangzhou.aliyuncs.com/jiaozi pro \"ssh cent@47.91.47.195 -p 22093\" "
+  only:
+    refs:
+      - master
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_PRO/
+
+deploy:apollosun:pro-hk:
+  stage: deploy
+  tags:
+    - gitrunner-dev
+  script:
+    - "cd  docker && ./run_service_pro.sh -1 registry.cn-hangzhou.aliyuncs.com/jiaozi pro-hk \"ssh cent@47.244.154.80 -p 22078\" "
+  only:
+    refs:
+      - master
+    changes:
+      - src/**/*
+    variables:
+      - $ENV =~ /^APOLLO_SUN_PRO_HK/

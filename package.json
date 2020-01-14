@@ -1,0 +1,63 @@
+{
+  "name": "gvt-supervision-platform",
+  "description": "End @GVT",
+  "version": "1.0.0",
+  "author": "Lei Zhang <https://www.lovchun.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "predev": "node ./src/scripts/env_validator.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "analyzer": "cross-env NODE_ENV=production ANALYZER=true webpack --progress --hide-modules",
+    "build:gzip": "cross-env NODE_ENV=production GZIP=true webpack --progress --hide-modules",
+    "liveServer": "live-server dist",
+    "dev:mock": "cross-env NODE_ENV=development MOCK=true webpack-dev-server --open --hot"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "element-ui": "2.13.0",
+    "html5-image-compress": "^0.1.3",
+    "js-md5": "^0.7.3",
+    "moment": "^2.24.0",
+    "vue": "^2.5.11",
+    "vue-router": "^3.0.7",
+    "vuex": "^3.0.1",
+    "wangeditor": "^3.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "devDependencies": {
+    "archiver": "^3.0.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-import": "^1.7.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "1.1.12",
+    "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.4",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "mockjs": "^1.0.1-beta3",
+    "url-loader": "^1.1.2",
+    "vue-loader": "14.2.4",
+    "vue-svgicon": "^3.2.0",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
