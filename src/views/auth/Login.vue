@@ -145,15 +145,13 @@ export default {
 <style lang="scss">
 $maincolor: #fa983a;
 .login-container {
-  position: fixed;
-  height: 100%;
   width: 100%;
   background-image: url("~@/assets/public_bg.jpg");
   overflow: hidden;
 
   .login-form {
     width: 562px;
-    height: 376px;
+    height: 440px;
     background: rgba(254, 254, 254, 0.8);
     padding: 40px;
     border-radius: 5px;
@@ -208,5 +206,8 @@ $maincolor: #fa983a;
 .nc-container .nc_scale .btn_slide {
   background: $maincolor;
   border-radius: 0 4px 4px 0;
+}
+.nc_wrapper{
+width:100% !important;
 }
 </style>

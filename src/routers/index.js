@@ -20,17 +20,25 @@ const routes = [{
         name: 'console',
         component: () => import("@/views/console/index"),
       },
+      {
+        path: "/login",
+        name: "login",
+        component: () => import("@/views/auth/Login"),
+        meta: {
+          title: "登录"
+        }
+      },
     ]
   },
 
-  {
-    path: "/login",
-    name: "login",
-    component: () => import("@/views/auth/Login"),
-    meta: {
-      title: "登录"
-    }
-  },
+  // {
+  //   path: "/login",
+  //   name: "login",
+  //   component: () => import("@/views/auth/Login"),
+  //   meta: {
+  //     title: "登录"
+  //   }
+  // },
 
   {
     path: "/403",
@@ -68,6 +76,7 @@ const routes = [{
 ]
 
 export default new VueRouter({
+  // linkExactActiveClass:"active",
   mode: "hash",
   scrollBehavior: () => ({
     y: 0
