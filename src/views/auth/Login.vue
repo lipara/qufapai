@@ -8,7 +8,7 @@
         <el-input ref="account" v-model="loginForm.account" placeholder="请输入手机号码" type="text" />
       </el-form-item>
       <el-form-item prop="pwd">
-        <el-input key="passwordType" ref="password" v-model="loginForm.pwd" type="passwordType" placeholder="请输入密码" @keyup.enter.native="handleLogin" />
+        <el-input key="passwordType" ref="password" v-model="loginForm.pwd" type="password" placeholder="请输入密码" @keyup.enter.native="handleLogin" />
       </el-form-item>
       <div id="your-dom-id" class="nc-container"></div>
       <div style="text-align:right;">
