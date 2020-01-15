@@ -1,6 +1,6 @@
 <template>
   <div class="footer-nav">
-    <div style="max-width:1280px;margin: 0 auto;overflow: hidden;">
+    <div style="max-width:1200px;margin: 0 auto;overflow: hidden;">
       <div style="float:left;line-height:26px;">
         <router-link to="/home" class="nav-list">
           关于我们
@@ -40,9 +40,9 @@ export default {
 <style lang="scss">
 $maincolor: #fa983a;
 .footer-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  // position: fixed;
+  // bottom: 0;
+  // width: 100%;
   padding: 28px 0 37px 0;
   width: 100%;
   // text-align: center;
@@ -50,7 +50,7 @@ $maincolor: #fa983a;
   .nav-list {
     padding: 10px 5px;
     color: #444;
-    font-size: 14px;
+    font-size: 16px;
     &:hover {
       color: $maincolor;
     }
@@ -60,7 +60,7 @@ $maincolor: #fa983a;
   }
   .nav-company-info {
     p {
-      font-size: 13px;
+      font-size: 14px;
       color: #444;
     }
   }

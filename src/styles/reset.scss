@@ -1,0 +1,112 @@
+$maincolor: #fa983a;
+
+
+//登录  start
+.login-container {
+  width: 100%;
+  background-image: url("~@/assets/public_bg.jpg");
+  overflow: hidden;
+
+  .login-form {
+    width: 600px;
+    // height: 460px;
+    background: rgba(254, 254, 254, 0.8);
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 #ffffff;
+    margin: 110px auto;
+    text-align: center;
+  }
+
+  .title-container {
+    .title {
+      font-size: 24px;
+      color: #444444;
+      margin: 0px auto 40px auto;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .loginbtn {
+    width: 260px;
+    margin: 30px;
+    height: 40px;
+    background: $maincolor;
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+// 登录end
+
+//公共头部 start
+
+.header-title {
+  height: 75px;
+  // padding: 0 78px;
+  line-height: 78px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .header-nav {
+    display: inline-block;
+    margin-left: 102px;
+    overflow: hidden;
+    vertical-align: sub;
+
+    .nav-list {
+      padding: 10px 20px;
+      color: #000;
+      font-size: 18px;
+
+      &:hover {
+        color: $maincolor;
+      }
+
+      &.router-link-active {
+        color: $maincolor;
+      }
+    }
+  }
+
+  .el-button--text {
+    color: #666;
+
+    &.activeBtn {
+      color: $maincolor;
+    }
+  }
+}
+
+//公共头部 end
+
+
+// 注册
+.c-form-item-code {
+  height: 30px;
+  width: 150px;
+  text-align: center;
+  line-height: 32px;
+  margin-top: 6px;
+  cursor: pointer;
+  padding: 0 6px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  background-color: $maincolor;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: $maincolor;
+
+  }
+}
+
+.c-sign-up-agreement {
+  color: $maincolor;
+  cursor: pointer;
+}
+
+// 注册 end

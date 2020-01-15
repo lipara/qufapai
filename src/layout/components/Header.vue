@@ -34,45 +34,14 @@ export default {
   },
   methods: {
     toLogin() {
+      this.isActive = true
       this.$router.push({ name: "login" })
     },
     toRegister() {
       this.isActive = false
+      this.$router.push({ name: "register" })
+
     }
   }
 }
 </script>
-<style lang="scss">
-$maincolor: #fa983a;
-.header-title {
-  height: 75px;
-  // padding: 0 78px;
-  line-height: 78px;
-  overflow: hidden;
-      max-width: 1280px;
-    margin: 0 auto;
-  .header-nav {
-    display: inline-block;
-    margin-left: 102px;
-    overflow: hidden;
-    vertical-align: sub;
-    .nav-list {
-      padding: 10px 20px;
-      color: #000;
-      font-size: 18px;
-      &:hover {
-        color: $maincolor;
-      }
-      &.router-link-active {
-        color: $maincolor;
-      }
-    }
-  }
-  .el-button--text {
-    color: #666;
-    &.activeBtn {
-      color: $maincolor;
-    }
-  }
-}
-</style>

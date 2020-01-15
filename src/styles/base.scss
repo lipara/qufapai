@@ -1,9 +1,13 @@
-
 $maincolor: #fa983a;
 
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 20px/1;
 }
 
 html,
@@ -75,39 +79,39 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    vertical-align: baseline;
-    background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    height: 100%;
-    overflow-y: auto;
-    min-width: 1200px;
-    margin: 0 auto;
-    -webkit-overflow-scrolling: touch;
-    font-family: "Microsoft YaHei";
+  height: 100%;
+  overflow-y: auto;
+  min-width: 1200px;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  font-family: "Microsoft YaHei";
 }
 
 input,
 select,
 textarea,
 button {
-    font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei";
 }
 
 select,
 input,
 button {
-    vertical-align: middle;
-    outline: none;
+  vertical-align: middle;
+  outline: none;
 }
 
 h1,
@@ -118,47 +122,47 @@ h5,
 h6,
 i,
 b {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 i {
-    font-style: normal;
+  font-style: normal;
 }
 
 ul,
 ol,
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 img {
-    border: 0;
-    vertical-align: middle;
-    max-width: 100%;
+  border: 0;
+  vertical-align: middle;
+  max-width: 100%;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 iframe {
-    border: none;
+  border: none;
 }
 
 a {
-    -webkit-tap-highlight-color: transparent;
-    tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
 a:link,
 a:visited,
 a:hover,
 a:active {
-    // color: inherit;
-    text-decoration: none;
+  // color: inherit;
+  text-decoration: none;
 }
 
 /* 取消苹果圆角 */
@@ -169,7 +173,7 @@ input[type="button"],
 input[type="text"],
 button,
 textarea {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-appearance: none;
-    border-radius: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  border-radius: 0;
 }

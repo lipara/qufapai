@@ -28,6 +28,22 @@ const routes = [{
           title: "登录"
         }
       },
+      {
+        path: "/register",
+        name: "register",
+        component: () => import("@/views/auth/Register"),
+        meta: {
+          title: "注册"
+        }
+      },
+      {
+        path: "/findpassword",
+        name: "findpassword",
+        component: () => import("@/views/auth/FindPassword"),
+        meta: {
+          title: "找回密码"
+        }
+      },
     ]
   },
 

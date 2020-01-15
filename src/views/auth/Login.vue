@@ -12,7 +12,7 @@
       </el-form-item>
       <div id="your-dom-id" class="nc-container"></div>
       <div style="text-align:right;">
-        <el-button :loading="loading" type="text" style="color:#444444;font-size:14px;" @click.native.prevent="handleLogin">忘记密码？</el-button><br>
+        <el-button :loading="loading" type="text" style="color:#444444;font-size:14px;" @click.native.prevent="findPassword">忘记密码？</el-button><br>
       </div>
       <el-button :loading="loading" class="loginbtn" @click="handleLogin">登录</el-button>
     </el-form>
@@ -81,7 +81,7 @@ export default {
           // this.$router.push({ name: "home" })
         })
         .catch(error => {
-          this.$Message.error('用户名或者密码错误')
+          this.$message.error('用户名或者密码错误')
         });
       // this.$refs.loginForm.validate(valid => {
       //   if (valid) {
@@ -97,6 +97,10 @@ export default {
       //     return false
       //   }
       // })
+    },
+
+    findPassword() {
+      this.$router.push({ name: "findpassword" })
     },
 
     getNC() {
@@ -144,43 +148,6 @@ export default {
 
 <style lang="scss">
 $maincolor: #fa983a;
-.login-container {
-  width: 100%;
-  background-image: url("~@/assets/public_bg.jpg");
-  overflow: hidden;
-
-  .login-form {
-    width: 562px;
-    height: 440px;
-    background: rgba(254, 254, 254, 0.8);
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px 0 #ffffff;
-    margin: 110px auto;
-    text-align: center;
-  }
-
-  .title-container {
-    .title {
-      font-size: 22px;
-      color: #444444;
-      margin: 0px auto 40px auto;
-      text-align: center;
-      font-weight: bold;
-    }
-  }
-  .loginbtn {
-    width: 365px;
-    margin: 30px;
-    height: 56px;
-    background: $maincolor;
-    color: #fff;
-    font-size: 22px;
-  }
-}
-</style>
-<style lang="scss">
-$maincolor: #fa983a;
 
 .nc-container .nc_scale span,
 .nc_scale,
@@ -207,7 +174,7 @@ $maincolor: #fa983a;
   background: $maincolor;
   border-radius: 0 4px 4px 0;
 }
-.nc_wrapper{
-width:100% !important;
+.nc_wrapper {
+  width: 100% !important;
 }
 </style>

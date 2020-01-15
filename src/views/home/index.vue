@@ -1,5 +1,5 @@
 <template>
-  <div style="max-width:1280px;margin:0 auto;">
+  <div style="max-width:1200px;margin:0 auto;">
     这是首页
     <Button @click="console()">点击</Button>
     <Button @click="loginout()">退出</Button>
