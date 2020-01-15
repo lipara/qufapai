@@ -1,10 +1,68 @@
 <template>
-  <div>
-    这是脚部
+  <div class="footer-nav">
+    <div style="max-width:1280px;margin: 0 auto;overflow: hidden;">
+      <div style="float:left;line-height:26px;">
+        <router-link to="/home" class="nav-list">
+          关于我们
+        </router-link>
+        <span>|</span>
+        <router-link to="/console" class="nav-list">
+          联系我们
+        </router-link>
+        <span>|</span>
+        <router-link to="/console" class="nav-list">
+          网站地图
+        </router-link>
+        <span>|</span>
+        <router-link to="/console" class="nav-list">
+          员工登录
+        </router-link>
+        <div class="nav-company-info">
+          <p>企业名称</p>
+          <p>办公地址</p>
+          <p>备案编号</p>
+          <p>版权所有</p>
+          <h2 style="margin-top:10px;font-weight:bold;"> <i class="el-icon-phone-outline"></i> 4000-0000-0000</h2>
+        </div>
+      </div>
+      <div style="float:right;">
+        <img src="@/assets/ewm.png" alt="">
+        <p style="color:#444;font-size:15px;text-align:center;margin-top:5px;">趣法拍微信公众号</p>
+      </div>
+    </div>
   </div>
 </template> 
 <script>
 export default {
-  
+
 }
 </script>
+<style lang="scss">
+$maincolor: #fa983a;
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 28px 0 37px 0;
+  width: 100%;
+  // text-align: center;
+  overflow: hidden;
+  .nav-list {
+    padding: 10px 5px;
+    color: #444;
+    font-size: 14px;
+    &:hover {
+      color: $maincolor;
+    }
+    &.router-link-active {
+      color: $maincolor;
+    }
+  }
+  .nav-company-info {
+    p {
+      font-size: 13px;
+      color: #444;
+    }
+  }
+}
+</style>

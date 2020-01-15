@@ -46,9 +46,11 @@ export default {
 $maincolor: #fa983a;
 .header-title {
   height: 75px;
-  padding: 0 78px;
+  // padding: 0 78px;
   line-height: 78px;
   overflow: hidden;
+      max-width: 1280px;
+    margin: 0 auto;
   .header-nav {
     display: inline-block;
     margin-left: 102px;
