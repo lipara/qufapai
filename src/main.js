@@ -5,6 +5,7 @@ import store from "./vuex/store"
 // import iView from "iview"
 import VueBus from "./utils/bus"
 import Auth from "./utils/auth"
+
 import * as filters from './filters'
 
 import ElementUI from 'element-ui';

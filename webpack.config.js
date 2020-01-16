@@ -31,12 +31,20 @@ module.exports = {
           use: ['css-loader']
         })
       },
-      
+
       {
         test: /\.less$/,
         use: ExtractTextPlugin.extract({
           fallback: 'vue-style-loader',
           use: ['css-loader', 'less-loader']
+        })
+      },
+
+      {
+        test: /\.sass$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          use: ['css-loader', 'sass-loader']
         })
       },
 
@@ -78,7 +86,7 @@ module.exports = {
     ]
   },
   externals: {
-   
+
   },
   plugins: [
     new CleanWebpackPlugin(pathsToClean),

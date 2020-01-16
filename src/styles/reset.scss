@@ -1,5 +1,33 @@
 $maincolor: #fa983a;
 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font: 20px/1 'Microsoft YaHei', '微软雅黑', arial, sans-serif;
+}
+
+@media only screen and (max-width: 1366px) {
+   html{
+      font-size:14px; // 1rem = 13.66px
+   }
+}
+
+@function px2rem($px, $base-font-size) {
+  @if (unitless($px)) {
+    //unitless函数判断有无单位，无单位返回true
+    @return ($px / $base-font-size) * 1rem;
+  }
+
+  @else if (unit($px)==em) {
+    //函数取出传入参数的单位 px/em/rem..
+    @return $px;
+  }
+
+  @return ($px / $base-font-size) * 1rem;
+}
 
 //登录  start
 .login-container {
@@ -8,7 +36,7 @@ $maincolor: #fa983a;
   overflow: hidden;
 
   .login-form {
-    width: 600px;
+    width: px2rem(843px, 20px);
     // height: 460px;
     background: rgba(254, 254, 254, 0.8);
     padding: 40px;
