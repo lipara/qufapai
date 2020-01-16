@@ -1,21 +1,20 @@
 $maincolor: #fa983a;
+$base-font-size:20px;
 
-* {
-  box-sizing: border-box;
-}
 
 html,
 body {
+
   font: 20px/1 'Microsoft YaHei', '微软雅黑', arial, sans-serif;
 }
 
-@media only screen and (max-width: 1366px) {
-   html{
-      font-size:14px; // 1rem = 13.66px
-   }
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
 }
 
-@function px2rem($px, $base-font-size) {
+@function px2rem($px) {
   @if (unitless($px)) {
     //unitless函数判断有无单位，无单位返回true
     @return ($px / $base-font-size) * 1rem;
@@ -34,35 +33,41 @@ body {
   width: 100%;
   background-image: url("~@/assets/public_bg.jpg");
   overflow: hidden;
-
   .login-form {
-    width: px2rem(843px, 20px);
+    width: px2rem(527px);
     // height: 460px;
     background: rgba(254, 254, 254, 0.8);
-    padding: 40px;
+    padding: px2rem(35px);
     border-radius: 5px;
     box-shadow: 0 0 5px 0 #ffffff;
-    margin: 110px auto;
+    margin: px2rem(69px) auto;
     text-align: center;
   }
 
   .title-container {
     .title {
-      font-size: 24px;
+      font-size: px2rem(21px);
       color: #444444;
-      margin: 0px auto 40px auto;
+      margin: 0px auto 30px auto;
       text-align: center;
       font-weight: bold;
     }
   }
 
   .loginbtn {
-    width: 260px;
-    margin: 30px;
-    height: 40px;
+    width: px2rem(228px);
+    margin: px2rem(20px);
+    margin-bottom: 0;
+    height: px2rem(35px);
+    line-height: px2rem(34px);
+    padding:0;
     background: $maincolor;
     color: #fff;
     font-size: 16px;
+  }
+
+  .el-input__inner {
+    height: px2rem(35px);
   }
 }
 
@@ -71,9 +76,10 @@ body {
 //公共头部 start
 
 .header-title {
-  height: 75px;
+  height: px2rem(70px);
   // padding: 0 78px;
-  line-height: 78px;
+  line-height: px2rem(70px);
+  ;
   overflow: hidden;
   max-width: 1200px;
   margin: 0 auto;
@@ -87,7 +93,7 @@ body {
     .nav-list {
       padding: 10px 20px;
       color: #000;
-      font-size: 18px;
+      font-size: px2rem(18px);
 
       &:hover {
         color: $maincolor;
@@ -106,6 +112,11 @@ body {
       color: $maincolor;
     }
   }
+  .headerlogo{
+    vertical-align: super;
+    width:px2rem(168px);
+        margin-top: 5px;
+  }
 }
 
 //公共头部 end
@@ -113,16 +124,15 @@ body {
 
 // 注册
 .c-form-item-code {
-  height: 30px;
+  height: px2rem(33px);
   width: 150px;
   text-align: center;
   line-height: 32px;
-  margin-top: 6px;
   cursor: pointer;
   padding: 0 6px;
   position: absolute;
-  top: 0;
-  right: 15px;
+  top: 5px;
+  right: 0;
   background-color: $maincolor;
   border-radius: 4px;
 
@@ -138,3 +148,34 @@ body {
 }
 
 // 注册 end
+
+
+//公共脚
+.footer-nav {
+  padding: 20px 0 20px 0;
+  width: 100%;
+  overflow: hidden;
+
+  .nav-list {
+    padding: 10px 5px;
+    color: #444;
+    font-size: px2rem(14px);
+
+    &:hover {
+      color: $maincolor;
+    }
+
+    &.router-link-active {
+      color: $maincolor;
+    }
+  }
+
+  .nav-company-info {
+    p {
+      font-size: px2rem(12px);
+      color: #444;
+    }
+  }
+}
+
+//公共脚 end

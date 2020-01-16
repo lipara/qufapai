@@ -1,6 +1,6 @@
 <template>
   <div class="header-title">
-    <img src="@/assets/logo.jpg" alt="" style="vertical-align: super;">
+    <img src="@/assets/logo.jpg" alt="" class="headerlogo">
     <div class="header-nav">
       <router-link to="/home" class="nav-list">
         首页

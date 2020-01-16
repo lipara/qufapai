@@ -5,14 +5,14 @@
         <h3 class="title">用户登录</h3>
       </div>
       <el-form-item prop="account">
-        <el-input ref="account" v-model="loginForm.account" placeholder="请输入手机号码" type="text" />
+        <el-input ref="account" v-model="loginForm.account" placeholder="请输入手机号码" type="text" class="" />
       </el-form-item>
       <el-form-item prop="pwd">
         <el-input key="passwordType" ref="password" v-model="loginForm.pwd" type="password" placeholder="请输入密码" @keyup.enter.native="handleLogin" />
       </el-form-item>
       <div id="your-dom-id" class="nc-container"></div>
       <div style="text-align:right;">
-        <el-button :loading="loading" type="text" style="color:#444444;font-size:14px;" @click.native.prevent="findPassword">忘记密码？</el-button><br>
+        <el-button :loading="loading" type="text" style="color:#444444;font-size:14px;" @click="findPassword">忘记密码？</el-button><br>
       </div>
       <el-button :loading="loading" class="loginbtn" @click="handleLogin">登录</el-button>
     </el-form>
@@ -69,7 +69,6 @@ export default {
   },
   methods: {
 
-
     handleLogin() {
       const params = Object.assign({}, this.loginForm, { pwd: md5(this.loginForm.pwd) })
 
@@ -83,20 +82,6 @@ export default {
         .catch(error => {
           this.$message.error('用户名或者密码错误')
         });
-      // this.$refs.loginForm.validate(valid => {
-      //   if (valid) {
-      //     this.loading = true
-      //     this.$store.dispatch('user/login', this.loginForm).then(() => {
-      //       this.$router.push({name:"changePassword" })
-      //       this.loading = false
-      //     }).catch(() => {
-      //       this.loading = false
-      //     })
-      //   } else {
-      //     console.log('error submit!!')
-      //     return false
-      //   }
-      // })
     },
 
     findPassword() {

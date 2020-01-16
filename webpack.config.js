@@ -40,13 +40,13 @@ module.exports = {
         })
       },
 
-      {
-        test: /\.sass$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'vue-style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
-      },
+      // {
+      //   test: /\.sass$/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'vue-style-loader',
+      //     use: ['css-loader', 'sass-loader']
+      //   })
+      // },
 
       {
         test: /\.s[ac]ss$/i,

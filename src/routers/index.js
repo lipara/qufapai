@@ -13,7 +13,7 @@ const routes = [{
     children: [{
         path: '/home',
         name: 'home',
-        component: () => import("@/views/home/index"),
+        component: () => import("@/views/home/HomeIndex"),
       },
       {
         path: '/console',
@@ -40,6 +40,7 @@ const routes = [{
         path: "/findpassword",
         name: "findpassword",
         component: () => import("@/views/auth/FindPassword"),
+        
         meta: {
           title: "找回密码"
         }

@@ -7,6 +7,7 @@
 <script>
 import "./styles/base.scss";
 import "./styles/reset.scss";
+import "../node_modules/swiper/css/swiper.css";
 
 export default {
   name: "App",

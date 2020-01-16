@@ -39,30 +39,5 @@ export default {
 </script>
 <style lang="scss">
 $maincolor: #fa983a;
-.footer-nav {
-  // position: fixed;
-  // bottom: 0;
-  // width: 100%;
-  padding: 28px 0 37px 0;
-  width: 100%;
-  // text-align: center;
-  overflow: hidden;
-  .nav-list {
-    padding: 10px 5px;
-    color: #444;
-    font-size: 16px;
-    &:hover {
-      color: $maincolor;
-    }
-    &.router-link-active {
-      color: $maincolor;
-    }
-  }
-  .nav-company-info {
-    p {
-      font-size: 14px;
-      color: #444;
-    }
-  }
-}
+
 </style>

@@ -1,12 +1,7 @@
 $maincolor: #fa983a;
-
-
 * {
   box-sizing: border-box;
 }
-
-
-
 
 html,
 body,
@@ -163,15 +158,15 @@ a:active {
   text-decoration: none;
 }
 
-/* 取消苹果圆角 */
+// /* 取消苹果圆角 */
 
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-input[type="text"],
-button,
-textarea {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: none;
-  border-radius: 0;
-}
+// input[type="submit"],
+// input[type="reset"],
+// input[type="button"],
+// input[type="text"],
+// button,
+// textarea {
+//   -webkit-tap-highlight-color: transparent;
+//   -webkit-appearance: none;
+//   border-radius: 0;
+// }
