@@ -1,22 +1,54 @@
 <template>
-  <div style="max-width:1200px;margin:0 auto;height:300px;">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-        <div class="swiper-slide">Slide 10</div>
+  <div>
+    <div class="swiper-box">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="@/assets/r1.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="@/assets/r1.png" alt="">
+          </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-pagination"></div>
       </div>
-      <!-- Add Arrows -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
     </div>
+    <div class="container-bg">
+      <div class="container-area">
+        <div class="container-floor">
+          <div class="floor-title">
+            <span class="floor-name"> 法拍严选</span>
+            <span class="floor-more">查看更多</span>
+          </div>
+          <ul class="floor-list">
+            <li class="floor-list-nav">
+              <img src="@/assets/test.png" alt="">
+              <p class="nav-name">北京市xxxx小区xxx栋001号</p>
+              <div class="nav-detail">
+                起拍价格
+                <span class="houseprice">1200.00万</span>
+                <span>xxx万/平</span>
+              </div>
+              <div class="nav-detail">
+                参考价格
+                <span>￥1120万</span>
+              </div>
+              <div class="nav-detail">
+                总面积
+                <span>100.00平</span>
+              </div>
+              <div class="nav-detail">
+                拍卖时间
+                <span>2020-10-10</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
     <Button @click="console()">点击</Button>
     <Button @click="loginout()">退出</Button>
   </div>
@@ -34,9 +66,14 @@ export default {
   },
   mounted() {
     var swiper = new Swiper('.swiper-container', {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        autoplay: {
+          disableOnInteraction: false, //手动滑动之后不打断播放
+          delay: 2000
+        },
       },
     });
   },
@@ -53,20 +90,7 @@ export default {
 }
 </script>
 
-<style>
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
+<style lang="scss">
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -75,8 +99,6 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -89,5 +111,8 @@ body {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  img {
+    height: 100%;
+  }
 }
 </style>

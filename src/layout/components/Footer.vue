@@ -26,8 +26,8 @@
         </div>
       </div>
       <div style="float:right;">
-        <img src="@/assets/ewm.png" alt="">
-        <p style="color:#444;font-size:15px;text-align:center;margin-top:5px;">趣法拍微信公众号</p>
+        <img src="@/assets/ewm.png" alt="" class="footer-ewm">
+        <p class="footer-ewm-title">趣法拍微信公众号</p>
       </div>
     </div>
   </div>
@@ -39,5 +39,4 @@ export default {
 </script>
 <style lang="scss">
 $maincolor: #fa983a;
-
 </style>

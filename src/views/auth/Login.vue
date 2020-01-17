@@ -1,32 +1,42 @@
 <template>
-  <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-      <div class="title-container">
-        <h3 class="title">用户登录</h3>
-      </div>
-      <el-form-item prop="account">
-        <el-input ref="account" v-model="loginForm.account" placeholder="请输入手机号码" type="text" class="" />
-      </el-form-item>
-      <el-form-item prop="pwd">
-        <el-input key="passwordType" ref="password" v-model="loginForm.pwd" type="password" placeholder="请输入密码" @keyup.enter.native="handleLogin" />
-      </el-form-item>
-      <div id="your-dom-id" class="nc-container"></div>
-      <div style="text-align:right;">
-        <el-button :loading="loading" type="text" style="color:#444444;font-size:14px;" @click="findPassword">忘记密码？</el-button><br>
-      </div>
-      <el-button :loading="loading" class="loginbtn" @click="handleLogin">登录</el-button>
-    </el-form>
-  </div>
+  <!-- <div class="flexlayout" ref="flexlayout">
+    <Header></Header> -->
+
+    <div class="login-container">
+      <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
+        <div class="title-container">
+          <h3 class="title">用户登录</h3>
+        </div>
+        <el-form-item prop="account">
+          <el-input ref="account" v-model="loginForm.account" placeholder="请输入手机号码" type="text" class="" />
+        </el-form-item>
+        <el-form-item prop="pwd">
+          <el-input key="passwordType" ref="password" v-model="loginForm.pwd" type="password" placeholder="请输入密码" @keyup.enter.native="handleLogin" />
+        </el-form-item>
+        <div id="your-dom-id" class="nc-container"></div>
+        <div style="text-align:right;">
+          <el-button :loading="loading" type="text" style="color:#444444;font-size:14px;" @click="findPassword">忘记密码？</el-button><br>
+        </div>
+        <el-button :loading="loading" class="loginbtn" @click="handleLogin">登录</el-button>
+      </el-form>
+    </div>
+    <!-- <Footer></Footer>
+  </div> -->
+
 </template>
 <script>
 import '@/utils/nc.js'
 import md5 from "js-md5";
 import { login } from "@/api/auth";
 import Auth from "@/utils/auth";
+import { Header, Footer } from '@/layout/components'
 
 // import { validUsername } from '@/utils/validate'
 export default {
-  name: 'Login',
+  components: {
+    Header,
+    Footer,
+  },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!value) {
@@ -43,6 +53,7 @@ export default {
       }
     }
     return {
+      divheight: "400px",
       loginForm: {
         account: 'admin',
         pwd: 'admin123456'
@@ -66,6 +77,8 @@ export default {
   },
   mounted() {
     this.getNC() // 初始化滑块
+    var tt = document.body.clientHeight || document.documentElement.clientHeight;
+    this.$refs.flexlayout.style.height = tt + 'px'; //动态设置HTML元素高度
   },
   methods: {
 
@@ -161,5 +174,12 @@ $maincolor: #fa983a;
 }
 .nc_wrapper {
   width: 100% !important;
+}
+</style>
+
+<style lang="scss">
+.flexlayout {
+  display: flex;
+  flex-direction: column; /*2*/
 }
 </style>

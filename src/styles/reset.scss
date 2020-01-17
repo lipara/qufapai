@@ -6,6 +6,7 @@ html,
 body {
 
   font: 20px/1 'Microsoft YaHei', '微软雅黑', arial, sans-serif;
+  color: #444;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -33,6 +34,9 @@ body {
   width: 100%;
   background-image: url("~@/assets/public_bg.jpg");
   overflow: hidden;
+  height: px2rem(616px);
+  margin-bottom: 10px;
+
   .login-form {
     width: px2rem(527px);
     // height: 460px;
@@ -60,7 +64,7 @@ body {
     margin-bottom: 0;
     height: px2rem(35px);
     line-height: px2rem(34px);
-    padding:0;
+    padding: 0;
     background: $maincolor;
     color: #fff;
     font-size: 16px;
@@ -77,18 +81,40 @@ body {
 
 .header-title {
   height: px2rem(70px);
-  // padding: 0 78px;
   line-height: px2rem(70px);
-  ;
   overflow: hidden;
-  max-width: 1200px;
   margin: 0 auto;
+
+  .fixedNavList {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 px2rem(73px);
+    background: #fff;
+
+  }
+
+  &.fixedNav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 99;
+
+
+  }
+
+  &.show {
+    display: flex;
+  }
+
+  &.hide {
+    display: none;
+  }
 
   .header-nav {
     display: inline-block;
     margin-left: 102px;
     overflow: hidden;
-    vertical-align: sub;
 
     .nav-list {
       padding: 10px 20px;
@@ -112,10 +138,11 @@ body {
       color: $maincolor;
     }
   }
-  .headerlogo{
+
+  .headerlogo {
     vertical-align: super;
-    width:px2rem(168px);
-        margin-top: 5px;
+    width: px2rem(168px);
+    margin-top: 5px;
   }
 }
 
@@ -152,9 +179,10 @@ body {
 
 //公共脚
 .footer-nav {
-  padding: 20px 0 20px 0;
+  padding: 0 px2rem(72px);
   width: 100%;
   overflow: hidden;
+  height: px2rem(199px);
 
   .nav-list {
     padding: 10px 5px;
@@ -176,6 +204,84 @@ body {
       color: #444;
     }
   }
+
+  .footer-ewm {
+    width: px2rem(172px)
+  }
+
+  .footer-ewm-title {
+    color: #444;
+    font-size: px2rem(14px);
+    text-align: center;
+    margin-top: 5px;
+  }
 }
 
 //公共脚 end
+
+//首页  start
+.swiper-box {
+  height: px2rem(500px);
+}
+
+.container-bg {
+  background-color: #F2F1EF;
+}
+
+.container-area {
+  max-width: 1200px;
+  padding: 0 px2rem(73px);
+  margin: 0 auto;
+
+  .container-floor {
+
+    .floor-title {
+      display: flex;
+      justify-content: space-between;
+      margin: px2rem(18px) 0;
+      line-height: px2rem(35px);
+
+      .floor-name {
+        font-size: px2rem(35px);
+        border-left: 4px solid $maincolor;
+        padding-left: 12px;
+        border-radius: 3px;
+      }
+
+      .floor-more {
+        font-size: px2rem(14px);
+        color: #000;
+      }
+    }
+
+    .floor-list {
+      overflow: hidden;
+
+      .floor-list-nav {
+        display: inline-block;
+        width: 23%;
+        padding: px2rem(18px);
+        margin: 1%;
+        background-color: #fff;
+        border-radius: 3px;
+
+        .nav-name {
+          color: #000;
+          font-size: px2rem(14px);
+          margin: px2rem(18px) 0;
+        }
+
+        .nav-detail {
+          color: #666;
+          font-size: px2rem(12px);
+          margin:8px 0;
+          .houseprice{
+            color: red;
+             font-size: px2rem(13px);
+             font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
