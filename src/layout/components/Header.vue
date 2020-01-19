@@ -2,13 +2,13 @@
   <div>
 
     <div class="header-title">
-      <div class="fixedNavList">
+      <div class="fixed-nav-list">
         <img src="@/assets/logo.jpg" alt="" class="headerlogo">
         <div class="header-nav">
           <router-link to="/home" class="nav-list">
             首页
           </router-link>
-          <router-link to="/console" class="nav-list">
+          <router-link to="/strict" class="nav-list">
             法拍严选
           </router-link>
           <router-link to="/console" class="nav-list">
@@ -30,7 +30,7 @@
 
     </div>
     <div class="header-title animated fixedNav" :class="showFixedNav ? 'fadeInDown show' : 'fadeOutUp hide'">
-      <div class="fixedNavList">
+      <div class="fixed-nav-list">
         <img src="@/assets/logo.jpg" alt="" class="headerlogo">
         <div class="header-nav">
           <router-link to="/home" class="nav-list">

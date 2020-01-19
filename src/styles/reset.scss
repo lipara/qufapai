@@ -85,13 +85,15 @@ body {
   overflow: hidden;
   margin: 0 auto;
 
-  .fixedNavList {
+  .fixed-nav-list {
     margin: 0 auto;
     width: 100%;
     padding: 0 px2rem(73px);
     background: #fff;
 
   }
+
+
 
   &.fixedNav {
     position: fixed;
@@ -144,10 +146,132 @@ body {
     width: px2rem(168px);
     margin-top: 5px;
   }
+
 }
 
 //公共头部 end
 
+//二级公共头部
+.second-header-title {
+
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+
+  .header-top-bg {
+    height: px2rem(40px);
+    line-height: px2rem(40px);
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  .fixed-nav-list {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 px2rem(73px);
+
+  }
+
+  .fixed-second-nav {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 px2rem(73px);
+    height: px2rem(70px);
+    line-height: px2rem(70px);
+
+    .second-title {
+      font-size: px2rem(34px);
+      color: $maincolor;
+      vertical-align: top;
+
+    }
+
+    .second-h {
+      font-size: px2rem(34px);
+      color: #ccc;
+      font-weight: 100;
+      margin-left: 5px;
+      vertical-align: top;
+    }
+
+    .form-select {
+      position: relative;
+      float: right;
+      margin-top: 15px;
+      width: px2rem(440px);
+      height: px2rem(40px);
+
+      .el-input__inner {
+        float: left;
+        height: 40px;
+      }
+
+      .form-btn {
+        position: absolute;
+        top: 2px;
+        right: 0;
+        border: none;
+        height: 40px;
+        color: #fff;
+        padding: 0 30px;
+        background: $maincolor;
+      }
+    }
+  }
+
+  &.fixedNav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 99;
+
+
+  }
+
+  &.show {
+    display: flex;
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  .header-nav {
+    display: inline-block;
+    overflow: hidden;
+
+    .nav-list {
+      padding: 10px 20px;
+      color: #fff;
+      font-size: px2rem(14px);
+
+      &:hover {
+        color: $maincolor;
+      }
+
+      &.router-link-active {
+        color: $maincolor;
+      }
+    }
+  }
+
+  .el-button--text {
+    color: #666;
+
+    &.activeBtn {
+      color: $maincolor;
+    }
+  }
+
+  .headerlogo {
+    vertical-align: super;
+    width: px2rem(168px);
+    margin-top: 5px;
+  }
+}
+
+//二级公共头部 end
 
 // 注册
 .c-form-item-code {
@@ -206,7 +330,7 @@ body {
   }
 
   .footer-ewm {
-    width: px2rem(172px)
+    width: px2rem(152px)
   }
 
   .footer-ewm-title {
@@ -215,6 +339,7 @@ body {
     text-align: center;
     margin-top: 5px;
   }
+
 }
 
 //公共脚 end
@@ -226,6 +351,52 @@ body {
 
 .container-bg {
   background-color: #F2F1EF;
+  margin-top: px2rem(92px);
+  position: relative;
+
+  .form-box {
+    position: absolute;
+    top: -180px;
+    left: 50%;
+    width: 48rem;
+    height: 8rem;
+    margin-left: -24rem;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    padding: px2rem(20px) px2rem(160px);
+    line-height: 15px;
+
+    .form-nav {
+      font-size: px2rem(16px);
+      color: #fff;
+
+      span {
+        margin-right: 15px;
+      }
+
+      .nav-title {
+        color: $maincolor;
+      }
+
+    }
+
+    .form-select {
+      position: relative;
+
+
+      .form-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        height: 40px;
+        color: #fff;
+        padding: 0 30px;
+        background: $maincolor;
+      }
+    }
+
+  }
 }
 
 .container-area {
@@ -234,6 +405,7 @@ body {
   margin: 0 auto;
 
   .container-floor {
+    overflow: hidden;
 
     .floor-title {
       display: flex;
@@ -256,6 +428,8 @@ body {
 
     .floor-list {
       overflow: hidden;
+      font-size: 0; //去掉块级元素  inline-block之间的默认空隙
+      margin-bottom: 10px;
 
       .floor-list-nav {
         display: inline-block;
@@ -264,6 +438,8 @@ body {
         margin: 1%;
         background-color: #fff;
         border-radius: 3px;
+        overflow: hidden;
+        cursor: pointer;
 
         .nav-name {
           color: #000;
@@ -274,14 +450,150 @@ body {
         .nav-detail {
           color: #666;
           font-size: px2rem(12px);
-          margin:8px 0;
-          .houseprice{
+          margin: 8px 0;
+
+          .houseprice {
             color: red;
-             font-size: px2rem(13px);
-             font-weight: bold;
+            font-size: px2rem(13px);
+            font-weight: bold;
+          }
+        }
+
+        img {
+          transition: all 0.6s;
+          width: 100%;
+
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.1);
+
           }
         }
       }
     }
+  }
+}
+
+/*右侧导航条*/
+.nav-sidebar {
+  position: fixed;
+  bottom: 200px;
+  right: 1rem;
+  width: 48px;
+  height: auto;
+  z-index: 1000;
+
+  .sidebar-list {
+    display: inline-block;
+    height: 48px;
+    background: #626061;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 3px;
+
+    &:hover {
+      .list-content {
+        display: inline-block;
+      }
+    }
+
+    .list-content {
+      position: absolute;
+      top: 0;
+      left: -120px;
+      display: inline-block;
+      width: 120px;
+      height: 120px;
+      line-height: 46px;
+      z-index: 100;
+      display: none;
+
+      &.phone-num {
+        height: 46px;
+        background-color: $maincolor;
+      }
+    }
+
+    .list-icon {
+      display: inline-block;
+      width: 100%;
+      margin: 15px 0;
+
+      i {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+/*右侧导航条 end*/
+
+//严选筛选条件
+.conditions {
+  max-width: 1200px;
+  margin: 20px auto;
+  ;
+
+  .home-name {
+    font-size: px2rem(14px);
+    color: #222;
+
+  }
+
+  .chosen {
+    border: 1px solid $maincolor;
+    color: $maincolor;
+    border-radius: 11px;
+    font-size: px2rem(14px);
+    padding: 2px 0 2px 10px;
+
+    .el-icon-close {
+      background: none;
+      height: 20px;
+      width: 20px;
+      text-align: center;
+      padding: 0;
+      border: none;
+      font-weight: bold;
+      color: $maincolor;
+    }
+  }
+
+  .conditions-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .nav-list {
+      padding: 10px 0;
+
+      .nav-title {
+        font-size: 16px;
+        color: #333;
+        padding-right: 14px;
+        font-weight: 700;
+      }
+
+      .nav-detail {
+        border: none;
+        background: none;
+        padding: 10px 5px;
+        font-size: px2rem(16px);
+
+        &:hover {
+          color: $maincolor;
+        }
+      }
+      .active{
+        color: $maincolor;
+      }
+    }
+
   }
 }

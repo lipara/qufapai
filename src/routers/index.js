@@ -40,7 +40,7 @@ const routes = [{
         path: "/findpassword",
         name: "findpassword",
         component: () => import("@/views/auth/FindPassword"),
-        
+
         meta: {
           title: "找回密码"
         }
@@ -48,14 +48,20 @@ const routes = [{
     ]
   },
 
-  // {
-  //   path: "/login",
-  //   name: "login",
-  //   component: () => import("@/views/auth/Login"),
-  //   meta: {
-  //     title: "登录"
-  //   }
-  // },
+  {
+    path: "/second",
+    name: "",
+    component: () => import("@/layout/SecondIndex"),
+    children: [{
+      path: "/strict",
+      name: "strict",
+      component: () => import("@/views/strictSelection/StrictIndex"),
+      meta: {
+        title: "法拍严选"
+      }
+    }],
+
+  },
 
   {
     path: "/403",

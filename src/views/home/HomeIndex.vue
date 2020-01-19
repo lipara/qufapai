@@ -10,16 +10,30 @@
             <img src="@/assets/r1.png" alt="">
           </div>
         </div>
-        <!-- Add Arrows -->
         <div class="swiper-pagination"></div>
       </div>
     </div>
     <div class="container-bg">
+      <div class="form-box">
+        <div class="form-nav">
+          <span class="nav-title">全部栏目</span>
+          <span>法拍严选</span>
+          <span>在售好房</span>
+        </div>
+        <div class="form-nav" style="margin:15px 0 25px 0;">
+          <span class="nav-title">全部城区</span>
+          <span v-for="(item,index) in cityData" :key="index">{{item}}</span>
+        </div>
+        <div class="form-select">
+          <el-input class="form-input"></el-input>
+          <el-button class="form-btn">搜索</el-button>
+        </div>
+      </div>
       <div class="container-area">
         <div class="container-floor">
           <div class="floor-title">
             <span class="floor-name"> 法拍严选</span>
-            <span class="floor-more">查看更多</span>
+            <span class="floor-more">查看更多<i class="el-icon-arrow-right"></i></span>
           </div>
           <ul class="floor-list">
             <li class="floor-list-nav">
@@ -44,24 +58,30 @@
               </div>
             </li>
           </ul>
+          <div>
+            <img src="@/assets/floorbg.png" alt="" width="100%">
+          </div>
         </div>
-
       </div>
     </div>
-
-    <Button @click="console()">点击</Button>
-    <Button @click="loginout()">退出</Button>
+    <!-- <Button @click="console()">点击</Button>
+    <Button @click="loginout()">退出</Button> -->
+    <!--导航条 Start-->
+    <slidebar></slidebar>
   </div>
 </template> 
 <script>
 import Auth from "@/utils/auth";
 import Swiper from "Swiper";
+import slidebar from "@/components/slidebar/Index.vue";
 
 export default {
   components: {
+    slidebar
   },
   data() {
     return {
+      cityData: ["京城", "西城", "海淀", "朝阳", "丰台", "昌平", "石景山", "大兴", "通州", "顺义"]
     }
   },
   mounted() {
@@ -85,7 +105,9 @@ export default {
       Auth.removeToken()
       //退出到首页
       window.location.href = "/"
-    }
+    },
+  
+
   }
 }
 </script>
