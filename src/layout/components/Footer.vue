@@ -5,22 +5,21 @@
         <router-link to="/home" class="nav-list">
           关于我们
         </router-link>
-        <span>|</span>
+        <span class="diliver">|</span>
         <router-link to="/console" class="nav-list">
           联系我们
         </router-link>
-        <span>|</span>
+        <span class="diliver">|</span>
         <router-link to="/console" class="nav-list">
           网站地图
         </router-link>
-        <span>|</span>
+        <span class="diliver">|</span>
         <router-link to="/console" class="nav-list">
           员工登录
         </router-link>
         <div class="nav-company-info">
           <p>企业名称</p>
-          <p>办公地址</p>
-          <p>备案编号</p>
+          <p>办公地址 备案编号</p>
           <p>版权所有</p>
           <h2 style="margin-top:10px;font-weight:bold;"> <i class="el-icon-phone-outline"></i> 4000-0000-0000</h2>
         </div>
@@ -39,4 +38,7 @@ export default {
 </script>
 <style lang="scss">
 $maincolor: #fa983a;
+.diliver{
+  font-size: 13px;
+}
 </style>

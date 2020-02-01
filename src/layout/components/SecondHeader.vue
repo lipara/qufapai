@@ -29,13 +29,13 @@
       </div>
       <div style="background:#fff;border-bottom:1px solid #ccc;">
         <div class="fixed-second-nav">
-          <img src="@/assets/logo.jpg" alt="" class="headerlogo">
+          <img src="@/assets/logo.png" alt="" class="headerlogo">
           <span class="second-h"> | </span>
           <span class="second-title">
             法拍严选
           </span>
           <el-form ref="form" :model="form" class="form-select">
-            <el-input class="form-input" v-model="form.name"></el-input>
+            <el-input class="form-input" v-model="form.name" placeholder="请输入关键字 如 博雅德园"></el-input>
             <el-button class="form-btn">搜索</el-button>
           </el-form>
         </div>

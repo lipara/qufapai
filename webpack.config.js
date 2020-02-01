@@ -73,7 +73,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|webp|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
@@ -99,7 +99,7 @@ module.exports = {
       chunks: ['main', 'runtime', 'vendor'],
       inject: 'body',
       hash: true,
-      title: 'Astraea',
+      title: '趣法拍',
       filename: 'index.html',
       template: 'index.ejs',
       minify: {

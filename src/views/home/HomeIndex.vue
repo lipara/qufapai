@@ -13,8 +13,8 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
-    <div class="container-bg">
-      <div class="form-box">
+    <div class="search-bg">
+<div class="form-box">
         <div class="form-nav">
           <span class="nav-title">全部栏目</span>
           <span>法拍严选</span>
@@ -25,24 +25,26 @@
           <span v-for="(item,index) in cityData" :key="index">{{item}}</span>
         </div>
         <div class="form-select">
-          <el-input class="form-input"></el-input>
+          <el-input class="form-input" placeholder="输入关键字 好房 好物即刻拥有"></el-input>
           <el-button class="form-btn">搜索</el-button>
         </div>
       </div>
+    </div>
+    <div v-for="(v,index) in contentList" :key="index" class="container-bg" :class="`container-bg${index}`">
       <div class="container-area">
         <div class="container-floor">
           <div class="floor-title">
-            <span class="floor-name"> 法拍严选</span>
+            <span class="floor-name"> {{v.name}}</span>
             <span class="floor-more">查看更多<i class="el-icon-arrow-right"></i></span>
           </div>
           <ul class="floor-list">
-            <li class="floor-list-nav">
+            <li class="floor-list-nav" v-for="(item,i) in 4" :key="i">
               <img src="@/assets/test.png" alt="">
               <p class="nav-name">北京市xxxx小区xxx栋001号</p>
               <div class="nav-detail">
                 起拍价格
                 <span class="houseprice">1200.00万</span>
-                <span>xxx万/平</span>
+                <span>(xxx万/平)</span>
               </div>
               <div class="nav-detail">
                 参考价格
@@ -64,6 +66,11 @@
         </div>
       </div>
     </div>
+    <div class="brand-bg">
+      <div class="brand-img">
+        <img src="@/assets/brand.png" alt="">
+      </div>
+    </div>
     <!-- <Button @click="console()">点击</Button>
     <Button @click="loginout()">退出</Button> -->
     <!--导航条 Start-->
@@ -81,7 +88,12 @@ export default {
   },
   data() {
     return {
-      cityData: ["京城", "西城", "海淀", "朝阳", "丰台", "昌平", "石景山", "大兴", "通州", "顺义"]
+      cityData: ["京城", "西城", "海淀", "朝阳", "丰台", "昌平", "石景山", "大兴", "通州", "顺义"],
+      contentList: [{
+        name:'法拍严选'
+      },{
+        name:'在售好房'
+      }]
     }
   },
   mounted() {

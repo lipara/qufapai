@@ -3,7 +3,7 @@
 
     <div class="header-title">
       <div class="fixed-nav-list">
-        <img src="@/assets/logo.jpg" alt="" class="headerlogo">
+        <img src="@/assets/logo.png" alt="" class="headerlogo">
         <div class="header-nav">
           <router-link to="/home" class="nav-list">
             首页
@@ -31,7 +31,7 @@
     </div>
     <div class="header-title animated fixedNav" :class="showFixedNav ? 'fadeInDown show' : 'fadeOutUp hide'">
       <div class="fixed-nav-list">
-        <img src="@/assets/logo.jpg" alt="" class="headerlogo">
+        <img src="@/assets/logo.png" alt="" class="headerlogo">
         <div class="header-nav">
           <router-link to="/home" class="nav-list">
             首页
@@ -51,7 +51,7 @@
         </div>
         <div style="float:right;">
           <el-button type="text" @click="toLogin" :class="{activeBtn:isActive}">登录</el-button>
-          <span style="color: #666;">|</span>
+          <span style="color: #666;font-size:13px">|</span>
           <el-button type="text" @click="toRegister" :class="{activeBtn:!isActive}">注册</el-button>
         </div>
       </div>
