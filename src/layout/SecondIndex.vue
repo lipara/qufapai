@@ -2,7 +2,7 @@
   <div class="app-wrapper">
     <SecondHeader></SecondHeader>
     <router-view></router-view>
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
   </div>
 </template>
 

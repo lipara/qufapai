@@ -1,14 +1,18 @@
-$maincolor: #fa983a;
+$maincolor     : #fa983a;
 $base-font-size:20px;
-$borderColor: rgba(250, 152, 58, 0.6);
+$borderColor   : rgba(250, 152, 58, 0.6);
 
 
 
 html,
 body {
 
-  font: 20px/1 'Microsoft YaHei', '微软雅黑', arial, sans-serif;
+  font : 20px/1 'Microsoft YaHei', '微软雅黑', arial, sans-serif;
   color: #444;
+}
+
+.el-button {
+  border-radius: 3px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -30,61 +34,65 @@ body {
 
   @return ($px / $base-font-size) * 1rem;
 }
-%view-width{
-  width: 60rem;
-  margin:0 auto;
+
+%view-width {
+  width  : 60rem;
+  margin : 0 auto;
   padding: 0 px2rem(73px);
-  img{
+
+  img {
     max-width: 100%;
   }
 }
-%view-sub-width{
-  width: 60rem;
-  margin:0 auto;
-  img{
+
+%view-sub-width {
+  width : 60rem;
+  margin: 0 auto;
+
+  img {
     max-width: 100%;
   }
 }
 
 //登录  start
 .login-container {
-  width: 100%;
+  width           : 100%;
   background-image: url("~@/assets/bg.jpg");
-  overflow: hidden;
-  height: px2rem(616px);
-  margin-bottom: 10px;
+  overflow        : hidden;
+  height          : px2rem(616px);
+  margin-bottom   : 10px;
 
   .login-form {
-    width: px2rem(527px);
-    // height: 460px;
-    background: rgba(254, 254, 254, 0.8);
-    padding: px2rem(35px);
+    width        : px2rem(527px);
+    // height    : 460px;
+    background   : rgba(254, 254, 254, 0.8);
+    padding      : px2rem(35px);
     border-radius: 5px;
-    box-shadow: 0 0 5px 0 #ffffff;
-    margin: px2rem(69px) auto;
-    text-align: center;
+    box-shadow   : 0 0 5px 0 #ffffff;
+    margin       : px2rem(69px) auto;
+    text-align   : center;
   }
 
   .title-container {
     .title {
-      font-size: px2rem(21px);
-      color: #444444;
-      margin: 0px auto 30px auto;
-      text-align: center;
+      font-size  : px2rem(21px);
+      color      : #444444;
+      margin     : 0px auto 30px auto;
+      text-align : center;
       font-weight: bold;
     }
   }
 
   .loginbtn {
-    width: px2rem(228px);
-    margin: px2rem(20px);
+    width        : px2rem(228px);
+    margin       : px2rem(20px);
     margin-bottom: 0;
-    height: px2rem(35px);
-    line-height: px2rem(34px);
-    padding: 0;
-    background: $maincolor;
-    color: #fff;
-    font-size: 16px;
+    height       : px2rem(35px);
+    line-height  : px2rem(34px);
+    padding      : 0;
+    background   : $maincolor;
+    color        : #fff;
+    font-size    : 16px;
   }
 
   .el-input__inner {
@@ -97,28 +105,28 @@ body {
 //公共头部 start
 
 .header-title {
-  height: px2rem(70px);
+  height     : px2rem(70px);
   line-height: px2rem(70px);
-  overflow: hidden;
-  margin: 0 auto;
+  overflow   : hidden;
+  margin     : 0 auto;
 
   .fixed-nav-list {
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 px2rem(73px);
-    background: #fff;
-    display: flex;
+    margin     : 0 auto;
+    width      : 100%;
+    padding    : 0 px2rem(73px);
+    background : #fff;
+    display    : flex;
     align-items: center;
   }
 
 
 
   &.fixedNav {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    position : fixed;
+    top      : 0;
+    width    : 100%;
     max-width: 100%;
-    z-index: 1000;
+    z-index  : 1000;
 
 
   }
@@ -132,24 +140,25 @@ body {
   }
 
   .header-nav {
-    display: inline-block;
+    display    : inline-block;
     margin-left: 102px;
-    overflow: hidden;
-    flex: 1;
+    overflow   : hidden;
+    flex       : 1;
 
     .nav-list {
-      padding: 10px 5px;
-      margin: 0 15px;
-      color: #000;
-      opacity: 0.8;
-      font-size: px2rem(18px);
+      padding      : 10px 5px;
+      margin       : 0 15px;
+      color        : #000;
+      opacity      : 0.8;
+      font-size    : px2rem(18px);
       border-bottom: 3px solid transparent;
+
       &:hover {
         color: $maincolor;
       }
 
       &.router-link-active {
-        color: $maincolor;
+        color       : $maincolor;
         border-color: $borderColor;
       }
     }
@@ -165,8 +174,8 @@ body {
 
   .headerlogo {
     vertical-align: super;
-    width: px2rem(168px);
-    // margin-top: 5px;
+    width         : px2rem(168px);
+    // margin-top : 5px;
   }
 
 }
@@ -177,14 +186,14 @@ body {
 .second-header-title {
 
   overflow: hidden;
-  margin: 0 auto;
-  width: 100%;
+  margin  : 0 auto;
+  width   : 100%;
 
   .header-top-bg {
-    height: px2rem(40px);
-    line-height: px2rem(40px);
+    height          : px2rem(40px);
+    line-height     : px2rem(40px);
     background-color: #000;
-    overflow: hidden;
+    overflow        : hidden;
   }
 
   .fixed-nav-list {
@@ -194,55 +203,55 @@ body {
 
   .fixed-second-nav {
     @extend %view-width;
-    height: px2rem(70px);
+    height     : px2rem(70px);
     line-height: px2rem(70px);
 
     .second-title {
-      font-size: px2rem(34px);
-      color: $maincolor;
+      font-size     : px2rem(34px);
+      color         : $maincolor;
       vertical-align: top;
 
     }
 
     .second-h {
-      font-size: px2rem(34px);
-      color: #ccc;
-      font-weight: 100;
-      margin-left: 5px;
+      font-size     : px2rem(34px);
+      color         : #ccc;
+      font-weight   : 100;
+      margin-left   : 5px;
       vertical-align: top;
     }
 
     .form-select {
-      position: relative;
-      float: right;
+      position  : relative;
+      float     : right;
       margin-top: 15px;
-      width: px2rem(440px);
-      height: px2rem(40px);
+      width     : px2rem(440px);
+      height    : px2rem(40px);
 
       .el-input__inner {
-        float: left;
+        float : left;
         height: 40px;
       }
 
       .form-btn {
-        position: absolute;
-        top: 2px;
-        right: 0;
-        border: none;
-        height: 40px;
-        color: #fff;
-        padding: 0 30px;
+        position  : absolute;
+        top       : 2px;
+        right     : 0;
+        border    : none;
+        height    : 40px;
+        color     : #fff;
+        padding   : 0 30px;
         background: $maincolor;
       }
     }
   }
 
   &.fixedNav {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    position : fixed;
+    top      : 0;
+    width    : 100%;
     max-width: 100%;
-    z-index: 1000;
+    z-index  : 1000;
 
 
   }
@@ -256,12 +265,12 @@ body {
   }
 
   .header-nav {
-    display: inline-block;
+    display : inline-block;
     overflow: hidden;
 
     .nav-list {
-      padding: 10px 20px;
-      color: #fff;
+      padding  : 10px 20px;
+      color    : #fff;
       font-size: px2rem(14px);
 
       &:hover {
@@ -284,8 +293,8 @@ body {
 
   .headerlogo {
     vertical-align: super;
-    width: px2rem(168px);
-    // margin-top: 5px;
+    width         : px2rem(168px);
+    // margin-top : 5px;
   }
 }
 
@@ -293,17 +302,17 @@ body {
 
 // 注册
 .c-form-item-code {
-  height: px2rem(33px);
-  width: 150px;
-  text-align: center;
-  line-height: 32px;
-  cursor: pointer;
-  padding: 0 6px;
-  position: absolute;
-  top: 5px;
-  right: 0;
+  height          : px2rem(33px);
+  width           : 150px;
+  text-align      : center;
+  line-height     : 32px;
+  cursor          : pointer;
+  padding         : 0 6px;
+  position        : absolute;
+  top             : 5px;
+  right           : 0;
   background-color: $maincolor;
-  border-radius: 4px;
+  border-radius   : 4px;
 
   &:hover {
     background-color: $maincolor;
@@ -312,7 +321,7 @@ body {
 }
 
 .c-sign-up-agreement {
-  color: $maincolor;
+  color : $maincolor;
   cursor: pointer;
 }
 
@@ -321,15 +330,15 @@ body {
 
 //公共脚
 .footer-nav {
-  padding: px2rem(35px) px2rem(72px);
-  width: 100%;
-  overflow: hidden;
+  padding  : px2rem(35px) px2rem(72px);
+  width    : 100%;
+  overflow : hidden;
   // height: px2rem(199px);
 
   .nav-list {
     padding-right: 5px;
-    color: #444;
-    font-size: px2rem(14px);
+    color        : #444;
+    font-size    : px2rem(14px);
 
     &:hover {
       color: $maincolor;
@@ -343,7 +352,7 @@ body {
   .nav-company-info {
     p {
       font-size: px2rem(12px);
-      color: #444;
+      color    : #444;
     }
   }
 
@@ -352,8 +361,8 @@ body {
   }
 
   .footer-ewm-title {
-    color: #444;
-    font-size: px2rem(14px);
+    color     : #444;
+    font-size : px2rem(14px);
     text-align: center;
     margin-top: 5px;
   }
@@ -366,24 +375,26 @@ body {
 .swiper-box {
   height: px2rem(500px);
 }
-.search-bg{
-  position: relative;
+
+.search-bg {
+  position     : relative;
   margin-bottom: px2rem(92px);
+
   .form-box {
-    position: absolute;
-    top: -85px;
-    left: 50%;
-    width: 48rem;
-    height: 8rem;
+    position   : absolute;
+    top        : -85px;
+    left       : 50%;
+    width      : 48rem;
+    height     : 8rem;
     margin-left: -24rem;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 99;
-    padding: px2rem(20px) px2rem(160px);
+    background : rgba(0, 0, 0, 0.6);
+    z-index    : 99;
+    padding    : px2rem(20px) px2rem(160px);
     line-height: 15px;
 
     .form-nav {
       font-size: px2rem(16px);
-      color: #fff;
+      color    : #fff;
 
       span {
         margin-right: 15px;
@@ -400,32 +411,37 @@ body {
 
 
       .form-btn {
-        position: absolute;
-        top: 0;
-        right: 0;
-        border: none;
-        height: 40px;
-        color: #fff;
-        padding: 0 30px;
+        position  : absolute;
+        top       : 0;
+        right     : 0;
+        border    : none;
+        height    : 40px;
+        color     : #fff;
+        padding   : 0 30px;
         background: $maincolor;
       }
     }
 
   }
 }
+
 .container-bg {
   background-color: #F2F1EF;
-  &.container-bg1{
+
+  &.container-bg1 {
     background-color: #E3E1E2;
   }
-  
+
   // margin-top: px2rem(92px);
 }
-.brand-bg{
+
+.brand-bg {
   padding: px2rem(18px) 0;
-  .brand-img{
+
+  .brand-img {
     @extend %view-width;
   }
+
   background-color: #F3F0F1;
 }
 
@@ -436,68 +452,69 @@ body {
     overflow: hidden;
 
     .floor-title {
-      display: flex;
+      display        : flex;
       justify-content: space-between;
-      margin: px2rem(18px) 0;
-      line-height: px2rem(35px);
+      margin         : px2rem(18px) 0;
+      line-height    : px2rem(35px);
 
       .floor-name {
-        font-size: px2rem(35px);
-        border-left: 4px solid $maincolor;
-        padding-left: 12px;
+        font-size    : px2rem(35px);
+        border-left  : 4px solid $maincolor;
+        padding-left : 12px;
         border-radius: 3px;
       }
 
       .floor-more {
         font-size: px2rem(14px);
-        color: #000;
-        opacity: 0.6;
-        cursor: pointer;
+        color    : #000;
+        opacity  : 0.6;
+        cursor   : pointer;
       }
     }
 
     .floor-list {
-      overflow: hidden;
-      font-size: 0; //去掉块级元素  inline-block之间的默认空隙
+      overflow     : hidden;
+      font-size    : 0; //去掉块级元素  inline-block之间的默认空隙
       margin-bottom: 10px;
-      display: flex;
+      display      : flex;
 
       .floor-list-nav {
-        display: inline-block;
-        max-width: 280px;
-        padding: px2rem(18px);
-        margin-right: 1%;
+        display         : inline-block;
+        max-width       : 280px;
+        padding         : px2rem(18px);
+        margin-right    : 1%;
         background-color: #fff;
-        border-radius: 3px;
-        overflow: hidden;
-        cursor: pointer;
-        flex: 1;
-        &:last-child{
+        border-radius   : 3px;
+        overflow        : hidden;
+        cursor          : pointer;
+        flex            : 1;
+
+        &:last-child {
           margin-right: 0;
         }
 
         .nav-name {
-          color: #000;
-          font-size: px2rem(14px);
-          margin: px2rem(18px) 0;
+          color      : #000;
+          font-size  : px2rem(14px);
+          margin     : px2rem(18px) 0;
           font-weight: bold;
         }
 
         .nav-detail {
-          color: #666;
+          color    : #666;
           font-size: px2rem(12px);
-          margin: 8px 0;
+          margin   : 8px 0;
 
           .houseprice {
-            color: red;
-            font-size: px2rem(13px);
+            color      : red;
+            font-size  : px2rem(13px);
             font-weight: bold;
           }
         }
 
         img {
           transition: all 0.6s;
-          width: 100%;
+          width     : 100%;
 
         }
 
@@ -515,23 +532,23 @@ body {
 /*右侧导航条*/
 .nav-sidebar {
   position: fixed;
-  bottom: 200px;
-  right: 1rem;
-  width: 48px;
-  height: auto;
-  z-index: 1000;
+  bottom  : 200px;
+  right   : 1rem;
+  width   : 48px;
+  height  : auto;
+  z-index : 1000;
 
   .sidebar-list {
-    display: inline-block;
-    height: 48px;
-    background: #626061;
-    color: #fff;
+    display      : inline-block;
+    height       : 48px;
+    background   : #626061;
+    color        : #fff;
     border-bottom: 1px solid #ccc;
-    font-size: 12px;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
+    font-size    : 12px;
+    width        : 100%;
+    text-align   : center;
+    cursor       : pointer;
+    position     : relative;
     border-radius: 3px;
 
     &:hover {
@@ -541,26 +558,26 @@ body {
     }
 
     .list-content {
-      position: absolute;
-      top: 0;
-      left: -120px;
-      display: inline-block;
-      width: 120px;
-      height: 120px;
+      position   : absolute;
+      top        : 0;
+      left       : -120px;
+      display    : inline-block;
+      width      : 120px;
+      height     : 120px;
       line-height: 46px;
-      z-index: 100;
-      display: none;
+      z-index    : 100;
+      display    : none;
 
       &.phone-num {
-        height: 46px;
+        height          : 46px;
         background-color: $maincolor;
       }
     }
 
     .list-icon {
       display: inline-block;
-      width: 100%;
-      margin: 15px 0;
+      width  : 100%;
+      margin : 15px 0;
 
       i {
         font-size: 25px;
@@ -574,28 +591,35 @@ body {
 //严选筛选条件
 .conditions {
   @extend %view-sub-width;
+  .breads{
+    margin: 15px 0;
+  }
+  .conditions-nav{
+    padding-bottom: 15px;
+  }
+
   .home-name {
     font-size: px2rem(14px);
-    color: #222;
+    color    : #222;
 
   }
 
   .chosen {
-    border: 1px solid $maincolor;
-    color: $maincolor;
+    border       : 1px solid $maincolor;
+    color        : $maincolor;
     border-radius: 11px;
-    font-size: px2rem(14px);
-    padding: 2px 0 2px 10px;
+    font-size    : px2rem(14px);
+    padding      : 2px 0 2px 10px;
 
     .el-icon-close {
-      background: none;
-      height: 20px;
-      width: 20px;
-      text-align: center;
-      padding: 0;
-      border: none;
+      background : none;
+      height     : 20px;
+      width      : 20px;
+      text-align : center;
+      padding    : 0;
+      border     : none;
       font-weight: bold;
-      color: $maincolor;
+      color      : $maincolor;
     }
   }
 
@@ -603,122 +627,249 @@ body {
     @extend %view-sub-width;
 
     .nav-list {
-      padding: 10px 0;
+      // padding: 10px 0;
 
       .nav-title {
-        font-size: 16px;
-        color: #333;
+        font-size    : 16px;
+        color        : #333;
         padding-right: 14px;
-        font-weight: 700;
+        font-weight  : 700;
       }
 
       .nav-detail {
-        border: none;
+        border    : none;
         background: none;
-        padding: 10px 5px;
-        font-size: px2rem(16px);
+        padding   : 10px 5px;
+        font-size : px2rem(16px);
 
         &:hover {
           color: $maincolor;
         }
       }
-      .active{
+
+      .active {
         color: $maincolor;
       }
     }
 
   }
 }
+
 // 严选内容
-.strictContent{
-  .list-bg{
+.strictContent {
+  .list-bg {
     background-color: #F2F1EF;
-    .list-con{
+
+    .list-con {
       @extend %view-sub-width;
       padding: 18px 0;
+
       .el-tabs__item {
-        padding: 0 30px !important;
-        height: 35px;
+        padding    : 0 30px !important;
+        height     : 35px;
         line-height: 35px;
-        border: 0 !important;
-        color: #888;
-        &.is-active{
+        border     : 0 !important;
+        color      : #888;
+
+        &.is-active {
           background-color: $maincolor;
-          color: #fff;
+          color           : #fff;
         }
       }
-      .el-tabs--card>.el-tabs__header .el-tabs__nav{
+
+      .el-tabs--card>.el-tabs__header .el-tabs__nav {
         border: 0;
       }
-      .el-tabs--card>.el-tabs__header{
-        border: 0;
+
+      .el-tabs--card>.el-tabs__header {
+        border          : 0;
         background-color: #fff;
       }
-      ul{
-        li{
-          display: flex;
-          align-items: center;
-          background-color: #fff;
-          padding-right: px2rem(20px);
-          img{
-            margin-right: px2rem(26px);
+
+      ul.list {
+        background-color: #fff;
+        padding-top     : px2rem(10px);
+
+        li {
+          display       : flex;
+          align-items   : center;
+          padding-bottom: px2rem(10px);
+          position: relative;
+          padding-right : px2rem(20px);
+
+          .el-tag {
+            border-color: transparent;
+            height      : 18px;
+            padding     : 0;
+            line-height : 17px;
+            width       : px2rem(105px);
+            text-align  : center;
+
+            &.area {
+              background-color: #48DBFB;
+              color           : #fff;
+              position        : absolute;
+              left            : 0px;
+              bottom          : 40px;
+            }
           }
-          .info{
-            flex: 1;
-            .title{
+
+          img {
+            margin-right: px2rem(26px);
+            height      : px2rem(158px);
+            margin-left : px2rem(10px);
+          }
+
+          .content {
+            display       : flex;
+            flex          : 1;
+            align-items   : center;
+            padding-bottom: 4px;
+            border-bottom : 1px solid rgba(0, 0, 0, 0.2);
+          }
+
+          .info {
+            flex      : 1;
+            margin-top: px2rem(25px);
+
+            .title {
               font-size: px2rem(23px);
             }
-            .detail{
-              font-size: 14px;
-              opacity: 0.8;
+
+            .detail {
+              font-size  : px2rem(14px);
+              opacity    : 0.8;
               line-height: px2rem(26px);
-              margin-top: px2rem(10px);
+              margin-top : px2rem(10px);
             }
-            .tag{
+
+            .tag {
               .el-tag {
                 border-color: transparent;
-                height: 18px;
-                padding: 0;
-                line-height: 17px;
-                width: 70px;
-                text-align: center;
-                &.el-tag--success{
+                height      : 18px;
+                padding     : 0;
+                line-height : 17px;
+                width       : 70px;
+                text-align  : center;
+
+                &.el-tag--success {
                   background-color: #BEDAFF;
-                  color: #4A69BD;
+                  color           : #4A69BD;
                 }
-                &.el-tag--info{
+
+                &.el-tag--info {
                   background-color: #FFC29E;
-                  color: #E55039;
+                  color           : #E55039;
                 }
-                &.el-tag--warning{
+
+                &.el-tag--warning {
                   background-color: #DEC3FF;
-                  color: #6C5CE7;
+                  color           : #6C5CE7;
                 }
               }
             }
 
           }
-          .price{
-            .title{
-              font-size: 14px;
+
+          .price {
+            .title {
+              font-size: px2rem(14px);
 
             }
-            h3{
-              color: #FF4757;
-              font-size: 35px;
-              margin: 5px 0;
-              span{
-                font-size: 18px;
+
+            h3 {
+              color    : #FF4757;
+              font-size: px2rem(35px);
+              margin   : 5px 0;
+
+              span {
+                font-size: px2rem(18px);
               }
             }
-            .num{
-              font-size: 14px;
+
+            .num {
+              font-size: px2rem(14px);
             }
-            .el-button{
-              width: 100%;
-              font-size: 12px;
-              padding: 2px;
+
+            .el-button {
+              width     : 100%;
+              font-size : 12px;
+              padding   : 2px;
               margin-top: 2px;
+            }
+          }
+        }
+      }
+      .block{
+        margin-top: px2rem(17px);
+      }
+      .el-pagination__total{
+        background-color: #E1E1E1;
+        padding: 0 10px;
+    border-radius: 4px;
+      }
+      .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev{
+        padding: 0 10px;
+      }
+      .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+        background-color: #fff;
+        border : 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .el-pagination.is-background .el-pager li:not(.disabled).active {
+        background-color: $maincolor;
+        border-color: $maincolor;
+    }
+    .el-pagination.is-background .el-pager li:not(.disabled):not(.active):hover {
+      color: $maincolor;
+      border-color: $maincolor;
+  }
+
+      .recommend {
+        background-color: #fff;
+
+        .title {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          font-size    : px2rem(14px);
+          font-weight  : bold;
+          margin       : 0px 9px;
+          padding      : 10px 0;
+          position     : relative;
+          padding-left : 10px;
+
+          b {
+            display      : inline-block;
+            border-left  : 3px solid $maincolor;
+            border-radius: 2px;
+            width        : 2px;
+            height       : px2rem(18px);
+            position     : absolute;
+            left         : 0;
+            top          : 8px;
+          }
+        }
+
+        ul {
+          padding: 17px;
+
+          li {
+            text-align: center;
+            margin-top: px2rem(21px);
+
+            p {
+              overflow     : hidden;
+              text-overflow: ellipsis;
+              white-space  : nowrap;
+              font-size    : px2rem(14px);
+              opacity      : 0.8;
+              margin       : 6px 0;
+            }
+
+            .el-button {
+              width           : px2rem(88px);
+              padding         : 2px;
+              font-size       : 12px;
+              background-color: $maincolor;
+              border-color    : $maincolor;
             }
           }
         }

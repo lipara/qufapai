@@ -11,7 +11,7 @@
           <router-link to="/strict" class="nav-list">
             法拍严选
           </router-link>
-          <router-link to="/console" class="nav-list">
+          <router-link to="/saleIndex" class="nav-list">
             在售好房
           </router-link>
           <router-link to="/console" class="nav-list">
@@ -36,10 +36,10 @@
           <router-link to="/home" class="nav-list">
             首页
           </router-link>
-          <router-link to="/console" class="nav-list">
+          <router-link to="/strict" class="nav-list">
             法拍严选
           </router-link>
-          <router-link to="/console" class="nav-list">
+          <router-link to="/saleIndex" class="nav-list">
             在售好房
           </router-link>
           <router-link to="/console" class="nav-list">

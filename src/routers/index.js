@@ -59,10 +59,16 @@ const routes = [{
       meta: {
         title: "法拍严选"
       }
-    }],
-
-  },
-
+    },
+    {
+      path: "/saleIndex",
+      name: "saleIndex",
+      component: () => import("@/views/strictSelection/SaleHouse"),
+      meta: {
+        title: "在售好房"
+      }
+    }
+  ]},
   {
     path: "/403",
     name: "403",
