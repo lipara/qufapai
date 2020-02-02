@@ -319,7 +319,7 @@ export default {
   methods: {}
 };
 </script>
-<style>
+<style scoped>
 html,
 body {
   position: relative;
