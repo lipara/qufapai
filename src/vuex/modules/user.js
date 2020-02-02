@@ -9,11 +9,15 @@ const user = {
   state: {
     // 账号
     userName: "",
+    viewLoad: true
   },
 
   mutations: {
     SET_USERNAME: (state, userName) => {
       state.userName = userName
+    },
+    SET_VIEWLOAD: (state, viewLoad) => {
+      state.viewLoad = viewLoad
     },
     LOGOUT_USER: (state) => {
       state.userName = "";

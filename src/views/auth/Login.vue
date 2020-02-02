@@ -76,9 +76,13 @@ export default {
 
   },
   mounted() {
+    this.$store.commit('SET_VIEWLOAD', true);
     this.getNC() // 初始化滑块
     var tt = document.body.clientHeight || document.documentElement.clientHeight;
     this.$refs.flexlayout.style.height = tt + 'px'; //动态设置HTML元素高度
+  },
+  beforeDestroy(){
+    this.$store.commit('SET_VIEWLOAD', false);
   },
   methods: {
 

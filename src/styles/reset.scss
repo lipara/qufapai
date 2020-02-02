@@ -212,6 +212,12 @@ body {
       vertical-align: top;
 
     }
+    .locate{
+      position: relative;
+    bottom: px2rem(25px);
+    font-size: px2rem(14px);
+    cursor: pointer;
+    }
 
     .second-h {
       font-size     : px2rem(34px);
@@ -627,7 +633,7 @@ body {
     @extend %view-sub-width;
 
     .nav-list {
-      // padding: 10px 0;
+      padding: 5px 0;
 
       .nav-title {
         font-size    : 16px;
@@ -774,7 +780,7 @@ body {
           .price {
             .title {
               font-size: px2rem(14px);
-
+              opacity: 0.8;
             }
 
             h3 {
@@ -789,6 +795,7 @@ body {
 
             .num {
               font-size: px2rem(14px);
+              opacity: 0.8;
             }
 
             .el-button {
@@ -872,6 +879,19 @@ body {
               border-color    : $maincolor;
             }
           }
+        }
+      }
+    }
+  }
+}
+// 在售好房
+.onsaleHouse{
+  .list-bg{
+    ul.list{
+      li{
+        .num{
+          margin-top: px2rem(20px);
+          opacity: 0.8;
         }
       }
     }

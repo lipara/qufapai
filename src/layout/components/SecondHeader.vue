@@ -21,9 +21,9 @@
             </router-link>
           </div>
           <div style="float:right;">
-            <el-button type="text" @click="toLogin" :class="{activeBtn:isActive}">登录</el-button>
-            <span style="color: #666;">|</span>
-            <el-button type="text" @click="toRegister" :class="{activeBtn:!isActive}">注册</el-button>
+            <el-button type="text" @click="toLogin" :class="{activeBtn:isActive && $store.getters.user.viewLoad}">登录</el-button>
+            <span style="color: #666;font-size:13px;">|</span>
+            <el-button type="text" @click="toRegister" :class="{activeBtn:!isActive && $store.getters.user.viewLoad}">注册</el-button>
           </div>
         </div>
       </div>
@@ -32,8 +32,9 @@
           <img src="@/assets/logo.png" alt="" class="headerlogo">
           <span class="second-h"> | </span>
           <span class="second-title">
-            法拍严选
+            {{$route.meta.title}}
           </span>
+          <span class="locate">北京</span>
           <el-form ref="form" :model="form" class="form-select">
             <el-input class="form-input" v-model="form.name" placeholder="请输入关键字 如 博雅德园"></el-input>
             <el-button class="form-btn">搜索</el-button>
@@ -56,6 +57,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$route)
     this.$nextTick(() => {
       window.addEventListener('scroll', (e) => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop

@@ -16,7 +16,7 @@
         <img src="@/assets/ewm.png" alt="" width="200">
       </span>
     </a>
-    <a class="sidebar-list" id="shang" href="#">
+    <a class="sidebar-list" id="shang" href="#" style="margin-top:20px;" title="回到顶部">
       <!-- <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop> -->
       <el-button style="height: 100%;background: none;border-radius: 4px;border: none; color:#fff;font-size:24px;padding:0;">
         <i class="el-icon-caret-top"></i>

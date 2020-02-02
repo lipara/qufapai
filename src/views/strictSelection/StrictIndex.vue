@@ -54,7 +54,7 @@
           <span class="nav-title">面积：</span>
           <el-button
             class="nav-detail"
-            v-for="(item,index) in houseData"
+            v-for="(item,index) in houseArea"
             :key="index"
             :class="{active:item.active}"
             @click="selectHouse(index)"
@@ -64,7 +64,7 @@
           <span class="nav-title">性质：</span>
           <el-button
             class="nav-detail"
-            v-for="(item,index) in houseData"
+            v-for="(item,index) in houseProty"
             :key="index"
             :class="{active:item.active}"
             @click="selectHouse(index)"
@@ -74,7 +74,7 @@
           <span class="nav-title">状态：</span>
           <el-button
             class="nav-detail"
-            v-for="(item,index) in houseData"
+            v-for="(item,index) in houseStatus"
             :key="index"
             :class="{active:item.active}"
             @click="selectHouse(index)"
@@ -84,7 +84,7 @@
           <span class="nav-title">拍卖次数：</span>
           <el-button
             class="nav-detail"
-            v-for="(item,index) in houseData"
+            v-for="(item,index) in saleNum"
             :key="index"
             :class="{active:item.active}"
             @click="selectHouse(index)"
@@ -216,6 +216,39 @@ export default {
         { name: "四室", id: "4", active: false },
         { name: "五室", id: "5", active: false },
         { name: "五室以上", id: "6", active: false }
+      ],
+      houseArea: [
+        { name: "不限", id: "-1", active: false },
+        { name: "50㎡以下", id: "1", active: false },
+        { name: "50-90㎡", id: "2", active: false },
+        { name: "90-140㎡", id: "3", active: false },
+        { name: "140-2000㎡", id: "4", active: false },
+        { name: "200㎡以上", id: "5", active: false }
+      ],
+      houseProty: [
+        { name: "不限", id: "-1", active: false },
+        { name: "住宅", id: "1", active: false },
+        { name: "别墅", id: "2", active: false },
+        { name: "商业", id: "3", active: false },
+        { name: "写字楼", id: "4", active: false },
+        { name: "酒店", id: "5", active: false },
+        { name: "其他", id: "6", active: false }
+      ],
+      houseStatus: [
+        { name: "不限", id: "-1", active: false },
+        { name: "正在拍卖", id: "1", active: false },
+        { name: "即将开拍", id: "2", active: false },
+        { name: "待定", id: "3", active: false },
+        { name: "成交", id: "4", active: false },
+        { name: "自由购", id: "5", active: false },
+      ],
+      saleNum: [
+        { name: "不限", id: "-1", active: false },
+        { name: "一拍", id: "1", active: false },
+        { name: "二拍", id: "2", active: false },
+        { name: "三拍", id: "3", active: false },
+        { name: "一口价", id: "4", active: false },
+        { name: "其他", id: "5", active: false },
       ]
     };
   },
@@ -243,11 +276,11 @@ export default {
       console.log(tab, event);
     },
     handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
-      },
-      handleCurrentChange(val) {
-        console.log(`当前页: ${val}`);
-      }
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+    }
   }
 };
 </script>

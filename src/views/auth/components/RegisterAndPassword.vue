@@ -121,7 +121,10 @@ export default {
   },
 
   mounted() {
-
+    this.$store.commit('SET_VIEWLOAD', true);
+  },
+  beforeDestroy(){
+    this.$store.commit('SET_VIEWLOAD', false);
   },
   methods: {
 

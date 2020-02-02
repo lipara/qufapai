@@ -1,5 +1,5 @@
 <template>
-  <div class="strictContent">
+  <div class="strictContent onsaleHouse">
     <div class="conditions">
       <div class="breads">
         <i class="el-icon-s-home" style="vertical-align: middle;"></i>
@@ -114,36 +114,30 @@
                     <p class="title">xxxx小区xxx号楼xx单元x号</p>
                     <div class="detail">
                       <p>
-                        <span>xxxx人关注</span>
-                        <span>2020-01-13 12:00挂牌</span>
+                        <i class="el-icon-location-outline"></i>
+                        <span>海淀 - 世纪城</span>
                       </p>
                       <p>
                         <i class="el-icon-house"></i>
-                        <span>海淀 - 世纪城 / 住宅 / 3室2厅 / 181.27平米</span>
+                        <span>3室2厅 | 181.27㎡ | 南北 | 简装 | 4/6层 | 08年建</span>
                       </p>
                       <p>
-                        <i class="el-icon-house"></i>
-                        <span>保证金金额：230.00万</span>
-                      </p>
-                      <p>
-                        <i class="el-icon-house"></i>
-                        <span>拍卖时间 ：2019-12-06 10:00:00</span>
+                        <i class="el-icon-star-off"></i>
+                        <span>128人关注 / 2019-12-06 10:00发布</span>
                       </p>
                     </div>
                     <div class="tag">
-                      <el-tag type="success">住宅</el-tag>
-                      <el-tag type="info">一口价</el-tag>
-                      <el-tag type="warning">商品房</el-tag>
+                      <el-tag type="success">必看好房</el-tag>
+                      <el-tag type="info">满五年</el-tag>
+                      <!-- <el-tag type="warning">商品房</el-tag> -->
                     </div>
                   </div>
                   <div class="price">
-                    <p class="title">起拍价：</p>
                     <h3>
                       668.00
                       <span>万</span>
                     </h3>
-                    <p class="num">参考价：750.00万</p>
-                    <el-button plain>立即关注</el-button>
+                    <p class="num">单价12345.67/㎡</p>
                   </div>
                 </div>
               </li>
@@ -165,7 +159,7 @@
           <el-col :span="4">
             <div class="recommend">
               <p class="title">
-                <b></b>严选推荐
+                <b></b>好房推荐
               </p>
               <ul>
                 <li v-for="(item,index) in 2" :key="index">

@@ -22,9 +22,9 @@
           </router-link>
         </div>
         <div style="float:right;">
-          <el-button type="text" @click="toLogin" :class="{activeBtn:isActive}">登录</el-button>
-          <span style="color: #666;">|</span>
-          <el-button type="text" @click="toRegister" :class="{activeBtn:!isActive}">注册</el-button>
+          <el-button type="text" @click="toLogin" :class="{activeBtn:isActive && $store.getters.user.viewLoad}">登录</el-button>
+          <span style="color: #666;font-size:13px">|</span>
+          <el-button type="text" @click="toRegister" :class="{activeBtn:!isActive && $store.getters.user.viewLoad}">注册</el-button>
         </div>
       </div>
 
@@ -50,9 +50,9 @@
           </router-link>
         </div>
         <div style="float:right;">
-          <el-button type="text" @click="toLogin" :class="{activeBtn:isActive}">登录</el-button>
+          <el-button type="text" @click="toLogin" :class="{activeBtn:isActive && $store.getters.user.viewLoad}">登录</el-button>
           <span style="color: #666;font-size:13px">|</span>
-          <el-button type="text" @click="toRegister" :class="{activeBtn:!isActive}">注册</el-button>
+          <el-button type="text" @click="toRegister" :class="{activeBtn:!isActive && $store.getters.user.viewLoad}">注册</el-button>
         </div>
       </div>
 

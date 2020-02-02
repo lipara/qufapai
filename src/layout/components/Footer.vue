@@ -14,7 +14,7 @@
           网站地图
         </router-link>
         <span class="diliver">|</span>
-        <router-link to="/console" class="nav-list">
+        <router-link to="/login" class="nav-list">
           员工登录
         </router-link>
         <div class="nav-company-info">
