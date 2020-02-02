@@ -1,6 +1,6 @@
 <template>
   <div class="footer-nav">
-    <div style="max-width:1200px;margin: 0 auto;overflow: hidden;">
+    <div class="footer-box">
       <div style="float:left;line-height:26px;">
         <router-link to="/home" class="nav-list">
           关于我们

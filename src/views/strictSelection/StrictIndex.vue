@@ -106,7 +106,7 @@
               </el-tabs>
             </div>
             <ul class="list">
-              <li v-for="(item,index) in 4" :key="index">
+              <li v-for="(item,index) in 4" :key="index" @click="toDetail">
                 <el-tag class="area">实地拍摄</el-tag>
                 <img src="@/assets/test.png" alt />
                 <div class="content">
@@ -280,6 +280,9 @@ export default {
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
+    },
+    toDetail(){
+      this.$router.push({name:"detail"})
     }
   }
 };

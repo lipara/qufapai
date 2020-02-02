@@ -4,17 +4,17 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="@/assets/r1.png" alt="">
+            <img src="@/assets/r1.png" alt />
           </div>
           <div class="swiper-slide">
-            <img src="@/assets/r1.png" alt="">
+            <img src="@/assets/r1.png" alt />
           </div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
     </div>
     <div class="search-bg">
-<div class="form-box">
+      <div class="form-box">
         <div class="form-nav">
           <span class="nav-title">全部栏目</span>
           <span>法拍严选</span>
@@ -30,16 +30,24 @@
         </div>
       </div>
     </div>
-    <div v-for="(v,index) in contentList" :key="index" class="container-bg" :class="`container-bg${index}`">
+    <div
+      v-for="(v,index) in contentList"
+      :key="index"
+      class="container-bg"
+      :class="`container-bg${index}`"
+    >
       <div class="container-area">
         <div class="container-floor">
           <div class="floor-title">
-            <span class="floor-name"> {{v.name}}</span>
-            <span class="floor-more" @click="goDetails(v)">查看更多<i class="el-icon-arrow-right"></i></span>
+            <span class="floor-name">{{v.name}}</span>
+            <span class="floor-more" @click="goDetails(v)">
+              查看更多
+              <i class="el-icon-arrow-right"></i>
+            </span>
           </div>
           <ul class="floor-list">
-            <li class="floor-list-nav" v-for="(item,i) in 4" :key="i">
-              <img src="@/assets/test.png" alt="">
+            <li class="floor-list-nav" v-for="(item,i) in 4" :key="i" @click="toDetail">
+              <img src="@/assets/test.png" alt />
               <p class="nav-name">北京市xxxx小区xxx栋001号</p>
               <div class="nav-detail">
                 起拍价格
@@ -61,18 +69,18 @@
             </li>
           </ul>
           <div>
-            <img src="@/assets/floorbg.png" alt="" width="100%">
+            <img src="@/assets/floorbg.png" alt width="100%" />
           </div>
         </div>
       </div>
     </div>
     <div class="brand-bg">
       <div class="brand-img">
-        <img src="@/assets/brand.png" alt="">
+        <img src="@/assets/brand.png" alt />
       </div>
     </div>
     <!-- <Button @click="console()">点击</Button>
-    <Button @click="loginout()">退出</Button> -->
+    <Button @click="loginout()">退出</Button>-->
     <!--导航条 Start-->
     <slidebar></slidebar>
   </div>
@@ -88,46 +96,62 @@ export default {
   },
   data() {
     return {
-      cityData: ["京城", "西城", "海淀", "朝阳", "丰台", "昌平", "石景山", "大兴", "通州", "顺义"],
-      contentList: [{
-        name:'法拍严选'
-      },{
-        name:'在售好房'
-      }]
-    }
+      cityData: [
+        "京城",
+        "西城",
+        "海淀",
+        "朝阳",
+        "丰台",
+        "昌平",
+        "石景山",
+        "大兴",
+        "通州",
+        "顺义"
+      ],
+      contentList: [
+        {
+          name: "法拍严选"
+        },
+        {
+          name: "在售好房"
+        }
+      ]
+    };
   },
   mounted() {
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper(".swiper-container", {
       spaceBetween: 30,
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
         autoplay: {
           disableOnInteraction: false, //手动滑动之后不打断播放
           delay: 2000
-        },
-      },
+        }
+      }
     });
   },
   methods: {
     console() {
-      this.$router.push({ name: "console" })
+      this.$router.push({ name: "console" });
     },
     loginout() {
-      Auth.removeToken()
+      Auth.removeToken();
       //退出到首页
-      window.location.href = "/"
+      window.location.href = "/";
     },
-    goDetails(v){
-      if(v.name === '法拍严选'){
-        this.$router.push({ name: "strict" })
-      }else if(v.name === '在售好房'){
-        this.$router.push({ name: "saleIndex" })
+    goDetails(v) {
+      if (v.name === "法拍严选") {
+        this.$router.push({ name: "strict" });
+      } else if (v.name === "在售好房") {
+        this.$router.push({ name: "saleIndex" });
       }
+    },
+    toDetail() {
+      this.$router.push({ name: "detail" });
     }
-
   }
-}
+};
 </script>
 
 <style lang="scss">

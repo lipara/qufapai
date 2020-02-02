@@ -3,105 +3,115 @@ import VueRouter from "vue-router"
 
 Vue.use(VueRouter)
 const routes = [{
-    path: "/",
-    name: "root",
-    component: () => import("@/layout/index"),
+  path: "/",
+  name: "root",
+  component: () => import("@/layout/index"),
 
-    redirect: {
-      name: "home"
-    },
-    children: [{
-        path: '/home',
-        name: 'home',
-        component: () => import("@/views/home/HomeIndex"),
-      },
-      {
-        path: '/console',
-        name: 'console',
-        component: () => import("@/views/console/index"),
-      },
-      {
-        path: "/login",
-        name: "login",
-        component: () => import("@/views/auth/Login"),
-        meta: {
-          title: "登录"
-        }
-      },
-      {
-        path: "/register",
-        name: "register",
-        component: () => import("@/views/auth/Register"),
-        meta: {
-          title: "注册"
-        }
-      },
-      {
-        path: "/findpassword",
-        name: "findpassword",
-        component: () => import("@/views/auth/FindPassword"),
-
-        meta: {
-          title: "找回密码"
-        }
-      },
-    ]
+  redirect: {
+    name: "home"
   },
-
+  children: [{
+    path: '/home',
+    name: 'home',
+    component: () => import("@/views/home/HomeIndex"),
+  },
   {
-    path: "/second",
-    name: "",
-    component: () => import("@/layout/SecondIndex"),
-    children: [{
-      path: "/strict",
-      name: "strict",
-      component: () => import("@/views/strictSelection/StrictIndex"),
-      meta: {
-        title: "法拍严选"
-      }
-    },
-    {
-      path: "/saleIndex",
-      name: "saleIndex",
-      component: () => import("@/views/strictSelection/SaleHouse"),
-      meta: {
-        title: "在售好房"
-      }
-    }
-  ]},
+    path: '/console',
+    name: 'console',
+    component: () => import("@/views/console/index"),
+  },
   {
-    path: "/403",
-    name: "403",
-    component: () => import("@/views/error/403"),
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/auth/Login"),
     meta: {
-      title: 403
+      title: "登录"
     }
   },
-
   {
-    path: "/404",
-    name: "404",
-    component: () => import("@/views/error/404"),
+    path: "/register",
+    name: "register",
+    component: () => import("@/views/auth/Register"),
     meta: {
-      title: 404
+      title: "注册"
     }
   },
-
   {
-    path: "/500",
-    name: "500",
-    component: () => import("@/views/error/500"),
+    path: "/findpassword",
+    name: "findpassword",
+    component: () => import("@/views/auth/FindPassword"),
+
     meta: {
-      title: 500
+      title: "找回密码"
     }
   },
+  ]
+},
 
+{
+  path: "/second",
+  name: "",
+  component: () => import("@/layout/SecondIndex"),
+  children: [{
+    path: "/strict",
+    name: "strict",
+    component: () => import("@/views/strictSelection/StrictIndex"),
+    meta: {
+      title: "法拍严选"
+    }
+  },
   {
-    path: "*",
-    redirect: {
-      name: "404"
+    path: "/saleIndex",
+    name: "saleIndex",
+    component: () => import("@/views/strictSelection/SaleHouse"),
+    meta: {
+      title: "在售好房"
+    }
+  },
+  {
+    path: "/detail",
+    name: "detail",
+    component: () => import("@/views/strictSelection/StrictDetail"),
+    meta: {
+      title: "严选详情"
     }
   }
+
+  ]
+},
+{
+  path: "/403",
+  name: "403",
+  component: () => import("@/views/error/403"),
+  meta: {
+    title: 403
+  }
+},
+
+{
+  path: "/404",
+  name: "404",
+  component: () => import("@/views/error/404"),
+  meta: {
+    title: 404
+  }
+},
+
+{
+  path: "/500",
+  name: "500",
+  component: () => import("@/views/error/500"),
+  meta: {
+    title: 500
+  }
+},
+
+{
+  path: "*",
+  redirect: {
+    name: "404"
+  }
+}
 ]
 
 export default new VueRouter({

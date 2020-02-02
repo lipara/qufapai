@@ -2,6 +2,8 @@ $maincolor     : #fa983a;
 $base-font-size:20px;
 $borderColor   : rgba(250, 152, 58, 0.6);
 
+$borderColor: rgba(250, 152, 58, 0.6);
+$priceColor:#FF4757;
 
 
 html,
@@ -109,12 +111,13 @@ body {
   line-height: px2rem(70px);
   overflow   : hidden;
   margin     : 0 auto;
+  background : #fff;
 
   .fixed-nav-list {
+    @extend %view-width;
+
     margin     : 0 auto;
-    width      : 100%;
     padding    : 0 px2rem(73px);
-    background : #fff;
     display    : flex;
     align-items: center;
   }
@@ -198,7 +201,6 @@ body {
 
   .fixed-nav-list {
     @extend %view-width;
-
   }
 
   .fixed-second-nav {
@@ -336,11 +338,12 @@ body {
 
 //公共脚
 .footer-nav {
-  padding  : px2rem(35px) px2rem(72px);
-  width    : 100%;
   overflow : hidden;
   // height: px2rem(199px);
-
+  .footer-box{
+    @extend %view-width ;
+    overflow: hidden;
+  }
   .nav-list {
     padding-right: 5px;
     color        : #444;
@@ -596,7 +599,7 @@ body {
 
 //严选筛选条件
 .conditions {
-  @extend %view-sub-width;
+  @extend %view-width;
   .breads{
     margin: 15px 0;
   }
@@ -667,8 +670,9 @@ body {
     background-color: #F2F1EF;
 
     .list-con {
-      @extend %view-sub-width;
-      padding: 18px 0;
+      @extend %view-width;
+      padding-top: 18px;
+      padding-bottom: 18px;
 
       .el-tabs__item {
         padding    : 0 30px !important;
@@ -884,16 +888,235 @@ body {
     }
   }
 }
-// 在售好房
-.onsaleHouse{
-  .list-bg{
-    ul.list{
-      li{
-        .num{
-          margin-top: px2rem(20px);
+
+
+//严选详情
+.detailContent{
+  .detail-info{
+    @extend %view-width;
+    margin-bottom: 18px;
+    .detail-nav{
+      font-size: px2rem(14px);
+      color:#222;
+      opacity: 0.6;
+      margin:28px 0;
+    }
+   
+  }
+  .detail-title{
+    display: flex;
+    margin-bottom: 12px;
+    .title-name{
+      flex: 1;
+      line-height: 30px;
+    }
+    .title-r{
+      width:200px;
+      text-align: right;
+      font-size: 12px;
+      color: #888;
+      .title-img{
+        border:2px solid #fa983a;
+        width:  px2rem(35px) ;
+        height: px2rem(35px);
+        text-align: center;
+        line-height: px2rem(30px);
+        font-size: px2rem(25px);
+        vertical-align: text-bottom;
+        border-radius: 3px;
+        float: left;
+        &.box1{
+          background:$maincolor;
+          color:#fff;
+        }
+      }
+      .title-box{
+        display:inline-block;
+        width:55px;
+        line-height: 18px;
+        color: $maincolor;
+       
+        
+      }
+    }
+  }
+  .detail-introduce{
+    display: flex;
+    .img-box{
+      width:633px;
+      height:474px;
+    }
+    .product-info{
+    flex:1;
+    margin-left: px2rem(34px);
+    .product-nav{
+      padding: 27px 0;
+      border-bottom: 1px solid #ccc;
+      overflow: hidden;
+      .product-tag{
+        width:70px;
+        text-align:center;
+        height:18px;
+        line-height:16px;
+      }
+      .nav-title{
+        font-size: px2rem(14px);
+        color: #222;
+        opacity: 0.8;
+      }
+      .price{
+        color:$priceColor;
+        font-size:px2rem(42px);
+      }
+      .unit{
+        color:$priceColor;
+      }
+      .c-price{
+        font-size: px2rem(28px);
+        color: #222;
+        opacity: 0.8;
+      }
+      .c-unit{
+        font-size: px2rem(20px);
+        color: #222;
+        opacity: 0.8;
+      }
+      
+    }
+    .house-detail{
+      padding: 17px 0;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      .house-info{
+        flex:1;
+        line-height: 30px;
+        .house-num{
+          color:#222;
+          font-size: px2rem(21px);
+          opacity: 0.8;
+        }
+        .house-floor{
+          color:#888;
+          font-size: px2rem(16px);
           opacity: 0.8;
         }
       }
     }
+    }
   }
+  .look-report{
+    color:$maincolor;
+    font-size: 12px;
+    text-align: center;
+    margin: 5px;
+  }
+  .house-nav{
+    overflow: hidden;
+    padding: 17px 0;
+    .house-l{
+      color:#888;
+      font-size: px2rem(16px);
+      text-align: right;
+      width: 80px;
+      display: inline-block;
+    }
+    .house-d{
+      color:#222;
+      font-size: px2rem(16px);
+    }
+  }
+  .house-footer{
+    background: rgba(250,152,58,0.4);
+    display:flex;
+    padding: 13px 19px;
+    border-radius: 3px;
+    align-items: center;
+    .jt{
+      margin-left: 13px;
+      float: left;
+      width: 0;
+       height: 0;
+      border-width: 20px;
+      border-style: solid;
+      opacity:0.4;
+      border-color: transparent transparent transparent $maincolor;
+    }
+    .house-footer-nav{
+      background-color: $maincolor;
+      text-align: center;
+      width: px2rem(176px);
+      height:px2rem(35px);
+      line-height: px2rem(35px);
+      color: #fff;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 9px;
+      font-size: px2rem(16px);
+
+    }
+  }
+
+}
+.house-related{
+  background-color: #F3F0F1;
+  
+}
+.related-floor{
+  @extend %view-width;
+  .floor-title{
+    span{
+      border-radius: 3px;
+      border-left: 4px solid $maincolor;
+      font-size:px2rem(35px);
+      color:rgba(68,68,68,1);
+      padding-left: 12px;
+    }
+    padding:11px 0 18px 0;
+    border-bottom: 1px solid #ccc;
+  }
+    .floor-int{
+      padding:px2rem(34px) 0;
+      display: flex;
+    border-bottom: 1px solid #ccc;
+
+      .int-nav{
+        width:200px;
+        text-align: left;
+        font-size: px2rem(16px);
+        opacity: 0.6;
+      }
+      .int-content{
+        font-size: px2rem(16px);
+        color:#444;
+        line-height: 26px;
+        width:100%;
+
+      }
+    }
+    .community-int{
+      display: flex;
+      padding:18px 5px;
+      .community-right{
+        width: 100%;
+        margin-left: 30px;
+      }
+      .community-name{
+        font-size: px2rem(28px);
+        margin-right: 20px;
+
+      }
+      .community-floor{
+        margin-top:10px;
+      }
+      .community-info{
+        color:#888;
+      font-size: px2rem(14px);
+      width:48%;
+      display: inline-block;
+      }
+      .info-key{
+        color:#444;
+        font-size: px2rem(16px);
+      }
+    }
 }
