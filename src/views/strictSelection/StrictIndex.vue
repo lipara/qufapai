@@ -188,7 +188,7 @@ export default {
       activeName: "hot",
       currentPage1: 1,
       cityData: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "京城", id: "0", active: false },
         { name: "西城", id: "1", active: false },
         { name: "海淀", id: "2", active: false },
@@ -201,7 +201,7 @@ export default {
         { name: "顺义", id: "9", active: false }
       ],
       priceData: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "300万以下", id: "0", active: false },
         { name: "300-500万", id: "1", active: false },
         { name: "500-1000万", id: "2", active: false },
@@ -209,7 +209,7 @@ export default {
         { name: "3000万以上", id: "4", active: false }
       ],
       houseData: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "一室", id: "1", active: false },
         { name: "两室", id: "2", active: false },
         { name: "三室", id: "3", active: false },
@@ -218,7 +218,7 @@ export default {
         { name: "五室以上", id: "6", active: false }
       ],
       houseArea: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "50㎡以下", id: "1", active: false },
         { name: "50-90㎡", id: "2", active: false },
         { name: "90-140㎡", id: "3", active: false },
@@ -226,7 +226,7 @@ export default {
         { name: "200㎡以上", id: "5", active: false }
       ],
       houseProty: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "住宅", id: "1", active: false },
         { name: "别墅", id: "2", active: false },
         { name: "商业", id: "3", active: false },
@@ -235,7 +235,7 @@ export default {
         { name: "其他", id: "6", active: false }
       ],
       houseStatus: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "正在拍卖", id: "1", active: false },
         { name: "即将开拍", id: "2", active: false },
         { name: "待定", id: "3", active: false },
@@ -243,7 +243,7 @@ export default {
         { name: "自由购", id: "5", active: false },
       ],
       saleNum: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "一拍", id: "1", active: false },
         { name: "二拍", id: "2", active: false },
         { name: "三拍", id: "3", active: false },

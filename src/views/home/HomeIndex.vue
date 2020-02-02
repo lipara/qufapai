@@ -35,7 +35,7 @@
         <div class="container-floor">
           <div class="floor-title">
             <span class="floor-name"> {{v.name}}</span>
-            <span class="floor-more">查看更多<i class="el-icon-arrow-right"></i></span>
+            <span class="floor-more" @click="goDetails(v)">查看更多<i class="el-icon-arrow-right"></i></span>
           </div>
           <ul class="floor-list">
             <li class="floor-list-nav" v-for="(item,i) in 4" :key="i">
@@ -118,7 +118,13 @@ export default {
       //退出到首页
       window.location.href = "/"
     },
-  
+    goDetails(v){
+      if(v.name === '法拍严选'){
+        this.$router.push({ name: "strict" })
+      }else if(v.name === '在售好房'){
+        this.$router.push({ name: "saleIndex" })
+      }
+    }
 
   }
 }

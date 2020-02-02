@@ -54,37 +54,17 @@
           <span class="nav-title">面积：</span>
           <el-button
             class="nav-detail"
-            v-for="(item,index) in houseData"
+            v-for="(item,index) in houseArea"
             :key="index"
             :class="{active:item.active}"
             @click="selectHouse(index)"
           >{{item.name}}</el-button>
         </div>
         <div class="nav-list">
-          <span class="nav-title">性质：</span>
+          <span class="nav-title">标签：</span>
           <el-button
             class="nav-detail"
-            v-for="(item,index) in houseData"
-            :key="index"
-            :class="{active:item.active}"
-            @click="selectHouse(index)"
-          >{{item.name}}</el-button>
-        </div>
-        <div class="nav-list">
-          <span class="nav-title">状态：</span>
-          <el-button
-            class="nav-detail"
-            v-for="(item,index) in houseData"
-            :key="index"
-            :class="{active:item.active}"
-            @click="selectHouse(index)"
-          >{{item.name}}</el-button>
-        </div>
-        <div class="nav-list">
-          <span class="nav-title">拍卖次数：</span>
-          <el-button
-            class="nav-detail"
-            v-for="(item,index) in houseData"
+            v-for="(item,index) in houseProty"
             :key="index"
             :class="{active:item.active}"
             @click="selectHouse(index)"
@@ -182,7 +162,7 @@ export default {
       activeName: "hot",
       currentPage1: 1,
       cityData: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "京城", id: "0", active: false },
         { name: "西城", id: "1", active: false },
         { name: "海淀", id: "2", active: false },
@@ -195,7 +175,7 @@ export default {
         { name: "顺义", id: "9", active: false }
       ],
       priceData: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "300万以下", id: "0", active: false },
         { name: "300-500万", id: "1", active: false },
         { name: "500-1000万", id: "2", active: false },
@@ -203,13 +183,27 @@ export default {
         { name: "3000万以上", id: "4", active: false }
       ],
       houseData: [
-        { name: "不限", id: "-1", active: false },
+        { name: "不限", id: "-1", active: true },
         { name: "一室", id: "1", active: false },
         { name: "两室", id: "2", active: false },
         { name: "三室", id: "3", active: false },
         { name: "四室", id: "4", active: false },
         { name: "五室", id: "5", active: false },
         { name: "五室以上", id: "6", active: false }
+      ],
+      houseArea: [
+        { name: "不限", id: "-1", active: true },
+        { name: "50㎡以下", id: "1", active: false },
+        { name: "50-90㎡", id: "2", active: false },
+        { name: "90-140㎡", id: "3", active: false },
+        { name: "140-2000㎡", id: "4", active: false },
+        { name: "200㎡以上", id: "5", active: false }
+      ],
+      houseProty: [
+        { name: "不限", id: "-1", active: true },
+        { name: "必看好房", id: "1", active: false },
+        { name: "满五年", id: "2", active: false },
+        { name: "满两年", id: "3", active: false }
       ]
     };
   },
