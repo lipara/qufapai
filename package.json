@@ -15,7 +15,7 @@
     "dev:mock": "cross-env NODE_ENV=development MOCK=true webpack-dev-server --open --hot"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "element-ui": "2.13.0",
     "html5-image-compress": "^0.1.3",
